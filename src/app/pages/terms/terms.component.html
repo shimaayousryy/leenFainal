@@ -1,0 +1,94 @@
+
+<!-- terms  -->
+
+<div class="container py-5" *ngIf="flag">
+   <div class="row">
+   
+       <div class="col-md-7">
+           <h2 class="text-mainColor pb-3">Terms and conditions</h2>
+            <div class="d-flex flex-column ">
+              
+                <div>
+                    <h3 class="h5">Usage and Privacy Policy</h3>
+                    <p class="text-black-50">Dear customer, if you use the Lynn Al-Khair application and provide your personal data to us, it is your agreement to the terms contained in this agreement, affiliated to Lynn Al-Khair Company for Trade and registered in the Kingdom of Saudi Arabia with Commercial Registry No. 1010357685 as a limited liability company.</p>
+                    <hr>
+                </div>
+
+                <div>
+                    <h3 class="h5">Personal data</h3>
+                    <p class="text-black-50">If you browse the application, the personal data shown below will be saved: <br>
+                        The name , E-mail , Mobile number , Location and address "This requires the activation of the positioning feature at times".  
+                        <span class="text-mainColor">
+                            Your personal information is not used or sold to any third party
+                        </span></p>
+                        <hr>
+                </div>
+                
+                <div>
+                    <h3 class="h5">Online payment within the application </h3>
+                    <p class="text-black-50">
+                        An authorized third party is used to process electronic payments, and these processes do not apply to people who choose to "pay in cash" during the shopping process. This third party may request information about your credit card and may ask you to access your contact list. The application is a mechanism for refusing to receive the goods if they do not conform to the specifications, and the goods cannot be returned after receiving them.</p>
+                        <hr>
+                </div>
+
+                <div>
+                    <h3 class="h5">Inquiries and complaints  </h3>
+                    <p class="text-black-50">
+                        In case of any inquiries or complaints, I hope you can contact us directly by e-mail to support@leenalkhair.com, and a response will be made as soon as possible.</p>
+                        <hr>
+                </div>
+
+                
+            </div>
+            
+       </div>
+
+
+       <div class="col-md-4 offset-1 px-4">
+        <div class="handIcon">
+         <i class="fas fa-handshake text-mainColor "></i>
+        </div>
+
+        
+        <div>
+            <h3 class="h5">  The law that is based on the application of the Good Lin </h3>
+            <p class="text-black-50">The terms of using the application are governed by the law of the Kingdom of Saudi Arabia, and if you agree to them, you agree to submit to the judicial authority in the Saudi courts. </p>
+            <hr>
+        </div>
+
+      
+
+    </div>  
+
+    <div class="col-md-6 mx-auto text-center">
+        <div class="ml-auto mt-3">
+            <button class="btn bg-mainColor text-white btn-lg" (click)="goToConfirmNum();">Accept All Terms and conditions</button>
+        </div>
+       
+    </div>
+
+
+
+
+   </div> 
+</div>
+
+
+
+<div class="container py-5" *ngIf="!flag">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+           <div>
+            <h3 class="text-mainColor mb-5 text-center">confirm your mobile number</h3>
+            <div class="border p-3 rounded">
+                <div class="ml-3">
+                    <p>Enter Your Confirmation Number</p>
+                     <p>Sent To : <span>+966505434048</span></p>
+                </div>
+                <input type="number" class="form-control">
+                <button class="btn mt-3 btn-lg text-white bg-mainColor" (click)="goToCcompanyinfo();">Confirm</button>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>

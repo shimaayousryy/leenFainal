@@ -1,0 +1,43 @@
+
+
+
+@import"../../../styles.scss";
+
+.overlay{
+    text-align: center;
+    bottom: 0;
+}
+
+.overlay i{
+    color: $mainColor;
+    visibility: hidden;
+    background: white;
+}
+
+
+.product:hover .overlay i{
+    visibility: visible;
+    transition: all 1s ease-in;
+    transform: rotate(360deg);
+    color: white;
+    background-color: $mainColor; 
+}
+
+.confirm{
+    font-size: 20px;
+    line-height: 2;
+}
+
+.dropdown-menu a:hover{
+    color: $mainColor;
+}
+
+// .swal2-confirm {
+
+//     background-color: #27c454 !important;
+   
+// }
+.swal2-styled.swal2-confirm {
+    background-color: #27c454 !important;
+   
+}

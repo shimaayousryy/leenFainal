@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
+@font-face {
+    font-family: 'Fira Sans', sans-serif;
+    // src:  url(./assets/fonts/FiraSans-Black.ttf) format("truetype");
+    src:  url(./assets/fonts/FiraSans-Black.ttf);
+}
+$mainColor:rgb(143, 184, 61);
+
+
+.bg-mainColor{
+    background-color: $mainColor;
+}
+.text-mainColor{
+    color: $mainColor;
+}
+
+
+.container{
+    font-family:  'Fira Sans', sans-serif;  
+}
+
+
+
+///////////////////////////////style of login & signin & trace order ///////////////////
+.login-section{
+    background-image: url(./assets/images/bg_3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+ 
+}
+
+ .login-layer{
+    background-color: rgba(#072707 , .4);
+    color: white;
+}
+
+
+input:focus {
+   
+    box-shadow: none !important;
+}
+
+.login-layer i {
+    font-size: 25px;
+}
+input::placeholder{
+    color: white;
+}
+
+///////////////////////////////style of login & signin & trace order ///////////////////
+
+
+
+
+

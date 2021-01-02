@@ -1,0 +1,30 @@
+@import"../../../styles.scss";
+
+
+.login-section{
+    background-image: url(../../../assets/images/bg_3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+ 
+}
+
+
+ .login-layer{
+    background-color: rgba(#072707 , .4);
+    color: white;
+}
+
+
+
+input:focus , select:focus {
+   
+    box-shadow: none !important;
+}
+
+.login-layer i {
+    font-size: 18px;
+}
+
+input::placeholder{
+    color: white;
+}

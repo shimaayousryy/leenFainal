@@ -1,0 +1,21 @@
+
+
+@import "../../../styles.scss";
+
+
+.nav-color{
+    // background-color: #29B063;
+    background-color: $mainColor;
+}
+// .nav-text-color{
+//     color: $mainColor;
+// }
+.nav-product a{
+    color: $mainColor !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .selected-items ,.search {
+      margin-top: 16px;
+    }
+  }

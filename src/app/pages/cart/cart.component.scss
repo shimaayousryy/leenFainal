@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+.tabel-product td ,.tabel-product th{
+    text-align: center;
+    border: 1px solid $mainColor;
+}
+
+input:focus{
+
+    box-shadow: none;
+}
+
+.btns-payment{
+    font-size:20px ;
+    .chechout:hover{
+
+        background-color: $mainColor;
+        border: none;
+    }
+    .Shopping:hover{
+        color: white;
+        background-color: #6C757D;
+       
+    }
+}
+

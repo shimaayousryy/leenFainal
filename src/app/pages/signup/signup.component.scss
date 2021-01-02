@@ -1,0 +1,22 @@
+@import"../../../styles.scss";
+
+
+
+
+input ,select{
+    background-color: transparent;
+}
+
+input:focus , select:focus{
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+
+
+.text-gray{
+    color: gray;
+}
+
+
+

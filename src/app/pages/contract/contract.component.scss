@@ -1,0 +1,40 @@
+@import"../../../styles.scss";
+
+
+
+.login-section{
+    background-image: url(../../../assets/images/bg_3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+ 
+}
+
+
+ .login-layer{
+    background-color: rgba(#072707 , .4);
+    color: white;
+}
+
+input ,select{
+    background-color: transparent;
+}
+
+
+input:focus , .dropdown-toggle:focus{
+    background-color: transparent;
+
+    box-shadow: none !important;
+}
+
+.login-layer i {
+    font-size: 25px;
+}
+
+.dropdown-menu{
+    background-color: $mainColor ;
+    border: 0;
+   
+}
+.dropdown-menu a{
+    color: white;
+}

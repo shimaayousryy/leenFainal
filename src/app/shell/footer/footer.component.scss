@@ -1,0 +1,43 @@
+@import '../../../styles.scss';
+.fontsize{
+    font-size: 17px;
+}
+
+footer{
+    background-image: url(../../../assets/images/banner-home-1-img-2-wide.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+ 
+  
+}
+footer .footer-content{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+.shop-section{
+    border: 1px solid rgb(119, 117, 117);
+}
+
+.shop-section h5{
+   
+    font-weight: bold;
+}
+.shop-section li i {
+    margin-right: 10px;
+    color: $mainColor;
+}
+.shop-section li:hover {
+    cursor: pointer;
+}
+
+.shop-section li:hover i{
+    // transform: scale(1.5);
+    margin-right: 30px;
+    transition: all 1s ease;
+    color: $mainColor;
+}
+
+
+
+
+
