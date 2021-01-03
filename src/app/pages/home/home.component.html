@@ -1,8 +1,9 @@
 <!-------------------main home----------------------->
-<section class="container-fluid" >
+<section>
 
-    <!-- catigories product -->
-    <div class="container my-5" *ngIf="flag">
+ <div class="container-fluid"  *ngIf="flag">
+        <!-- catigories product -->
+    <div class="container my-5">
         <div class="row">
             <!-- sidebar -->
             <div class="col-md-3">
@@ -424,16 +425,18 @@
         </div>
     </div>
 
+ </div>
 
 </section>
 <!-------------------main home----------------------->
 
  
 <!-----------------confirm info----------------------->
-<section class="container py-5" *ngIf="!flag" >
+<section >
   
    
 
+  <div  class="container py-5" *ngIf="!flag">
     <div class="row">
         <div class="col-md-6 mx-auto text-center">
             <div>
@@ -444,8 +447,7 @@
         </div>
     </div>
 
+  </div>
 
 </section>
 <!-----------------end confirm info----------------------->
-<input type="text" [(ngModel)]="name" name="" id="">
-<p>{{name}}</p>

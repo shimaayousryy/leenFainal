@@ -1,109 +1,101 @@
-<div class="container login-section my-5 ">
-    <div class="row py-5 login-layer ">
+<section class="contract">
+    <div class="container login-section my-5 ">
+        <div class="row py-5 login-layer ">
+            <div class="col-md-7 ml-auto">
+                <div class="  py-3">
+                    <div class=" ">
+                        <!-------------------contract title------------------------->
+                        <div class="text-center  login ">
+                            <h2 class="text-white">create contract</h2>
+                        </div>
+                        <!-------------------end contract title------------------------->
 
-        <!-- <nz-date-picker
-        [nzDisabledDate]="disabledStartDate"
-        nzShowTime
-        nzFormat="yyyy-MM-dd HH:mm:ss"
-        [(ngModel)]="startValue"
-        nzPlaceHolder="Start"
-        (nzOnOpenChange)="handleStartOpenChange($event)"
-      ></nz-date-picker> -->
+                        <!--------------------contract form --------------------------->
+                        <div class="px-5 mt-4">
+                            <div class="">
+                                <!----------------------- Starting date --------------------->
+                                <div class="form-group">
+
+                                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+
+                                        <span class="   mx-3 mt-1 ">Starting </span>
+                                        <input type="date" class="form-control border-0" id="exampleInputPassword1" [(ngModel)]="contract.contract_start_date">
+                                    </div>
+                                </div>
+                                 <!-----------------------end Starting date --------------------->
+
+                                <!----------------------- ending date --------------------->
+                                <div class="form-group">
+                                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+
+                                        <span class="mx-3 mt-1 ">Ending </span>
+                                        <input type="date" class="form-control border-0" id="exampleInputPassword1">
+                                    </div>
+                                </div>
+                                <!-----------------------end ending date --------------------->
+
+                                <!----------------- delivary----------------------->
+                                <div class="form-group mt-4">
+                                    <div class="py-2 d-flex ">
+
+                              <!----------------- delivary period----------------------->
+                                        <div class="dropdown show">
+                                            <a class="btn bg-transparent border-bottom text-white dropdown-toggle"
+                                                href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                delivary period
+                                            </a>
+
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="#">every day </a>
+                                                <a class="dropdown-item" href="#">every two days</a>
+                                                <a class="dropdown-item" href="#">every three days</a>
+                                            </div>
+                                        </div>
+                            <!-----------------end delivary period----------------------->
+
+
+                                    <!----------------- delivary time----------------------->
+                                        <div class="dropdown show ml-3">
+                                            <a class="btn bg-transparent text-white border-bottom dropdown-toggle"
+                                                href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                delivary time
+                                            </a>
+
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="#">07:00pm to 10:00pm </a>
+                                                <a class="dropdown-item" href="#">08:00am to 10:00am</a>
+                                                <a class="dropdown-item" href="#">08:00am to 01:00pm</a>
+                                            </div>
+                                        </div>
+                                     <!-----------------end delivary time----------------------->
+                                    </div>
+                                </div>
+                                 <!-----------------end delivary----------------------->
 
 
 
-        <!-- <div class="col-md-5 px-5 border-right">
-            <img src="../../../assets/images/bglogin.jpg" class="w-100 h-100" alt="">
-        </div> -->
-
-        <div class="col-md-7 ml-auto">
-
-            <div class="  py-3">
-                <div class=" ">
-
-                    <div class="text-center  login ">
-                        <h2 class="text-white">create contract</h2>
 
 
+
+                                <div class="float-right">
+                                    <button (click)=" test()" type="submit" class="btn text-white bg-mainColor my-3">create
+                                        contract</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-------------------- end contract form --------------------------->
 
                     </div>
-
-                    <div class="px-5 mt-4">
-                        <form class="">
-
-
-                            <div class="form-group">
-
-                                <!-- <label for="exampleInputEmail1">Email address</label> -->
-                                <div class="border-bottom  rounded px-4 py-2 d-flex">
-
-                                    <span class="   mx-3 mt-1 ">Starting </span>
-                                    <input type="date" class="form-control border-0" id="exampleInputPassword1">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <!-- <label for="exampleInputEmail1">Email address</label> -->
-                                <div class="border-bottom  rounded px-4 py-2 d-flex">
-
-                                    <span class="mx-3 mt-1 ">Ending </span>
-                                    <input type="date" class="form-control border-0" id="exampleInputPassword1">
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group mt-4">
-                                <!-- <label for="exampleInputEmail1">Email address</label> -->
-                                <div class="py-2 d-flex ">
-
-
-
-                                    <div class="dropdown show">
-                                        <a class="btn bg-transparent border-bottom text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    delivary period
-                                </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#">every day </a>
-                                            <a class="dropdown-item" href="#">every two days</a>
-                                            <a class="dropdown-item" href="#">every three days</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="dropdown show ml-3">
-                                        <a class="btn bg-transparent text-white border-bottom dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    delivary time
-                                </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#">07:00pm to 10:00pm </a>
-                                            <a class="dropdown-item" href="#">08:00am to 10:00am</a>
-                                            <a class="dropdown-item" href="#">08:00am to 01:00pm</a>
-                                        </div>
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>
-
-
-
-
-
-                            <div class="float-right">
-                                <button type="submit"  class="btn text-white bg-mainColor my-3">create contract</button>
-
-                            </div>
-                        </form>
-
-                    </div>
-
                 </div>
+
             </div>
 
         </div>
     </div>
-</div>
+</section>
