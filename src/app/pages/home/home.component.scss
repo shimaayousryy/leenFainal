@@ -19,8 +19,8 @@
     padding-left: 6px;
     background-color: transparent;
 }
-.overlay .productquantity:focus{
-    box-shadow: none;
+.overlay input:focus{
+    box-shadow: none !important;
     border: 0;
 }
 
