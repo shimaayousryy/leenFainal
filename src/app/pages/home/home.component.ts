@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
 
     // condition to display button if data not equal all data of product
     disableLoadMore:boolean = false;
+    disableLoadLess:boolean=true;
 
     // main array of category
      category:category[]=[];
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     // init main object of  category
     this.categoryObj = new category();
 
@@ -60,6 +62,8 @@ export class HomeComponent implements OnInit {
      this.getAllCategory();
 
    localStorage.removeItem('page')
+
+  //  localStorage.removeItem('page')
     let perm = localStorage.getItem('permission');
     if (perm != null) {
       this.flag = true;
@@ -74,9 +78,22 @@ export class HomeComponent implements OnInit {
     this.homeproductServices.getAll().subscribe(
       res=>{
         localStorage.setItem('page' ,Object.values(res)[0] ) ;
-        localStorage.setItem('totalpage' ,Object.values(res)[4] )
+
+        // if( Object.values(res)[0]  == 1) {
+        //   this.disableLoadLess = false;
+        // }
+
+        // console.log(( localStorage.getItem('page')))
+
+        localStorage.setItem('totalpage' ,Object.values(res)[4] ) ;
+
         if(localStorage.getItem('totalpage') != localStorage.getItem('page')) {
           this.disableLoadMore = true;
+        }
+
+        if(  localStorage.getItem('page') == '1' ) {
+          this.disableLoadLess = false;
+          console.log(( localStorage.getItem('page')))
         }
         this.productList = res.data.map( (item) => {
           item.image_path = this.url+item.image_path+item.item_image;
@@ -120,8 +137,42 @@ export class HomeComponent implements OnInit {
       this.disableLoadMore = false;
     }
 
+
     this.pageNumber =1+Number( localStorage.getItem('page'))
     localStorage.setItem('page' ,String(this.pageNumber) )
+
+    if(localStorage.getItem('page') != '1') {
+      this.disableLoadLess = true;
+    }
+
+    this.homeproductServices.getAllWithLoadMore(String(this.pageNumber)).subscribe(
+      res=>{
+        this.productList = res.data.map( (item) => {
+          item.image_path = this.url+item.image_path+item.item_image;
+          return item;
+        });      }
+    )
+  }
+
+
+  loadLess(){
+    if( Number(localStorage.getItem('page'))  == 1) {
+      this.disableLoadLess = false;
+    } else {
+      this.disableLoadLess = true;
+    }
+
+    this.pageNumber =Number( localStorage.getItem('page'))-1;
+    localStorage.setItem('page' ,String(this.pageNumber) )
+
+    if(localStorage.getItem('page') != '1') {
+      this.disableLoadLess = true;
+      this.disableLoadMore = true;
+    } else if (localStorage.getItem('page') == '1') {
+      this.disableLoadLess = false;
+
+    }
+
     this.homeproductServices.getAllWithLoadMore(String(this.pageNumber)).subscribe(
       res=>{
         this.productList = res.data.map( (item) => {

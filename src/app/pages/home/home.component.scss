@@ -19,8 +19,8 @@
     padding-left: 6px;
     background-color: transparent;
 }
-.overlay .productquantity:focus{
-    box-shadow: none;
+.overlay input:focus{
+    box-shadow: none !important;
     border: 0;
 }
 
@@ -41,13 +41,18 @@
 .dropdown-menu a:hover{
     color: $mainColor;
 }
+.product-img{
+    max-height: 180px;
+    min-height: 180px;
+    border-radius: 50px;
+}
 
-// .swal2-confirm {
-
-//     background-color: #27c454 !important;
-   
-// }
 .swal2-styled.swal2-confirm {
     background-color: #27c454 !important;
    
 }
+
+// img{
+//     filter: drop-shadow(2px 4px 6px black);
+
+// }
