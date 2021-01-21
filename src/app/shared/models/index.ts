@@ -1,1 +1,1 @@
-export * from './contract.model'
+export * from './data-with-ranking.model'
