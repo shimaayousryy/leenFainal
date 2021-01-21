@@ -1,15 +1,16 @@
 
 export const BaseURL = "http://leennew.souq-athar.com/leen";
-
-export const EZIAPI_URL = BaseURL+'/public/api';
-
+export const   LeenAPI_URL = BaseURL + '/public/api';
 
 export class END_POINTS {
 
-    // Leen API
+  // api product
+  public static product =   LeenAPI_URL + "/product";
+  public static product_By_Id =   LeenAPI_URL + "/categoty_product";
 
-    // api product
-    public static product = EZIAPI_URL + "/product";
+
+  // api category
+  public static category =   LeenAPI_URL + "/category";
 
 
 

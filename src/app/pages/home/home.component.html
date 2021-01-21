@@ -13,9 +13,9 @@
                         <div>
                             <h3 class="bg-mainColor text-light text-center  py-2 rounded">CATEGORIES</h3>
                             <ul class="list-unstyled text-center">
-                                <li>Vegetables(25)</li>
-                                <li class="my-2">Fruits (67)</li>
-                                <li>Leaves (21)</li>
+                                <li *ngFor="let prop of category" (click)="fill(prop)">{{prop.en_category_name}}
+                                    <span> ( {{prop.en_category_name.length}} )</span>
+                                </li>
                             </ul>
                         </div>
                         <!----------------------CATEGORIES-------------->

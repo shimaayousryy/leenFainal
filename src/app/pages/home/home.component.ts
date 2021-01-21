@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { category } from './category.model';
 import { HomeproductService } from './homeproduct.service';
 import { Products } from './product.model';
 
@@ -10,6 +11,7 @@ import { Products } from './product.model';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
+
 })
 export class HomeComponent implements OnInit {
 
@@ -25,9 +27,20 @@ export class HomeComponent implements OnInit {
    // page number to loading more
     pageNumber:number;
 
+    // url to display image
     url="http://leennew.souq-athar.com/leen/public/";
 
+
+    // condition to display button if data not equal all data of product
     disableLoadMore:boolean = false;
+
+    // main array of category
+     category:category[]=[];
+
+     // main object
+     categoryObj:category= new category();
+
+
 
   constructor(private _router: Router ,
     private homeproductServices: HomeproductService) {
@@ -39,6 +52,13 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    // init main object of  category
+    this.categoryObj = new category();
+
+    // main method category get All
+     this.getAllCategory();
+
    localStorage.removeItem('page')
     let perm = localStorage.getItem('permission');
     if (perm != null) {
@@ -65,12 +85,12 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-
-
+  inject(arg0: string[]) {
+    throw new Error('Method not implemented.');
+  }
 
 
   addToCart() {
-
     swal.fire({
       icon: 'success',
 
@@ -111,4 +131,30 @@ export class HomeComponent implements OnInit {
     )
   }
 
+
+  /////////////////////// category /////////////////////////
+
+  getAllCategory(){
+    this.homeproductServices.getAllCategory().subscribe(
+      res=>{
+        this.category = res;
+      }
+    )
+  }
+
+  //// fill id to get data from category
+  fill(prop: category) {
+  this.categoryObj.id = prop.id;
+    // get all product
+    this.homeproductServices.getById(this.categoryObj.id).subscribe(
+      res=>{
+        console.log(res)
+        this.productList = res.data.map( (item) => {
+          item.image_path = this.url+item.image_path+item.item_image;
+          return item;
+        });
+      }
+    )
+
+  }
 }
