@@ -13,6 +13,16 @@
     visibility: hidden;
     background: white;
 }
+.overlay .productquantity{
+    border: none;
+    width: 20px;
+    padding-left: 6px;
+    background-color: transparent;
+}
+.overlay .productquantity:focus{
+    box-shadow: none;
+    border: 0;
+}
 
 
 .product:hover .overlay i{

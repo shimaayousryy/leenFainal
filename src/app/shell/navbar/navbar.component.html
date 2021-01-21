@@ -1,4 +1,6 @@
-<!-------------------- main navbar ----------------------------->
+<section>
+    <div class="">
+        <!-------------------- main navbar ----------------------------->
 <nav class="navbar navbar-expand-lg navbar-dark nav-color fixed-to py-3">
     <div class="container">
         <a class="navbar-brand">
@@ -69,5 +71,35 @@
         <!--------------------- end Selected Items --------------------------->
     </div>
 </div>
-
 <!--------------------- end logo & search --------------------------->
+
+
+
+<!---------------------setting-spinner --------------------------->
+<div class="setting-spinner d-flex justify-align-center">
+    <div class="setting bg-light  border rounded"> 
+         <i (click)="showSpinnerSitting()" class="fas fa-cog fa-spin fa-2x text-mainColor "></i>
+   </div>
+      <div *ngIf="show" class=" bg-light border rounded px-3">
+          <!-----------------------------languages----------------------->
+          <div class="lang py-3 border-bottom">
+              <h6 class="text-mainColor">Language</h6>
+            <div class=" arabEng">
+                <div class=" mr-4">
+                    <img src="../../../assets/images/saudi-arabia.png"  alt="">
+                    <span>Arabic</span>
+                </div>
+
+                <div class="">
+                    <img src="../../../assets/images/english-language.png" alt="">
+                    <span class="">English</span>
+                </div>
+            </div>
+          </div>
+       <!-------------------mood-------------------------->
+        
+      </div>
+  </div>
+  <!---------------------end setting-spinner --------------------------->
+    </div>
+</section>

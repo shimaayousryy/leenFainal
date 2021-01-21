@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , } from '@angular/common/http';
 import { END_POINTS } from './globals/global-config';
 import { Contract } from '../../models/contract.model';
 
 // about
 // const API_URL = END_POINTS.About;
 
-const API_URL = "http://leenalkhair.souq-athar.com"
+const API_URL = "http://leenalkhair.souq-athar.com/listing/getContract"
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,11 @@ export class SlideservicesService {
 
   /******************post contract method******************/
   createContract(model:Contract):Observable<Contract>{
+
     return this.http.post<Contract>(API_URL , model)
   }
+
+
 
   // get about
   // getAll(): Observable<About[]> {

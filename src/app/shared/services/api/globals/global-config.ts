@@ -1,14 +1,15 @@
 
-export const BaseURL = "http://api.aictec.com";
+export const BaseURL = "http://leennew.souq-athar.com/leen";
 
-export const EZIAPI_URL = BaseURL+'/api';
+export const EZIAPI_URL = BaseURL+'/public/api';
 
 
 export class END_POINTS {
 
-    // ZKt API
+    // Leen API
 
-    public static HomePageSlider = EZIAPI_URL + "/HmePage/GetImagesSlide";
+    // api product
+    public static product = EZIAPI_URL + "/product";
 
 
 

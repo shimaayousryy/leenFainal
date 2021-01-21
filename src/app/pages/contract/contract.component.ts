@@ -30,6 +30,7 @@ export class ContractComponent implements OnInit {
   }
   /******************post contract method******************/
   test(){
+    this.contract.user_id =3;
     this._SlideservicesService.createContract(this.contract).subscribe( res => {
     this.contract=res;
     console.log(this.contract)
