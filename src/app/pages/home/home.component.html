@@ -2,7 +2,7 @@
 <section>
 
     <div class="container-fluid" *ngIf="!flag">
-        <!-- catigories product -->
+        <!-- CATEGORIES product -->
         <div class="container my-5">
             <div class="row">
                 <!-------------------------sidebar------------------------>
@@ -32,7 +32,7 @@
                                 <li class="mt-2">
                                     <input type="radio" class="mr-2" name="price">
                                     <span>SAR 51 to SAR 100 (51)
-                </span>
+                                    </span>
                                 </li>
                                 <li class="mt-2">
                                     <input type="radio" class="mr-2" name="price">
@@ -45,7 +45,7 @@
                                 <li class="mt-2">
                                     <input type="radio" class="mr-2" name="price">
                                     <span>SAR 301 to SAR 500 (0)
-                </span>
+                                    </span>
 
                                 </li>
                                 <li class="mt-2">
@@ -59,47 +59,37 @@
 
                     </div>
                 </div>
-                <!-------------------------sidebar------------------------>
+                <!-------------------------end sidebar------------------------>
 
 
                 <!--------------------------products---------------------->
                 <div class="col-md-8 offset-1">
                     <div class="row">
-
-
                         <div class="col-md-12 mb">
                             <div class="d-flex justify-content-between">
                                 <!---------------------headers---------------->
                                 <div class="">
-                                    <h2 class="text-mainColor">All items
-                                    </h2>
+                                    <h2 class="text-mainColor">All items</h2>
                                 </div>
-                                <!---------------------headers---------------->
-
+                                <!---------------------end headers---------------->
                                 <!------------------------display by time\ price------------->
                                 <div class="dropdown">
-                                    <button class="btn bg-mainColor text-white dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    newest first
-                                </button>
+                                    <button class="btn bg-mainColor text-white dropdown-toggle" type="button"
+                                        id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        newest first
+                                    </button>
                                     <div class="dropdown-menu" aria-labelledby="triggerId">
                                         <a class="dropdown-item text-mainColor " href="#">newest first</a>
                                         <a class="dropdown-item text-mainColor " href="#">oldest first</a>
                                         <a class="dropdown-item text-mainColor " href="#">price : low to high</a>
                                         <a class="dropdown-item text-mainColor " href="#">price : high to low</a>
-
                                     </div>
                                 </div>
-                                <!------------------------display by time\ price------------->
-
-
+                                <!------------------------end display by time\ price------------->
                             </div>
-
                         </div>
-
-
                     </div>
-
-
                     <!-------------------------display product---------------->
                     <div class="row mt-3">
                         <div class="col-md-4 " *ngFor="let item of productList">
@@ -110,15 +100,6 @@
                                     <div>
                                         <img [src]="item.image_path" class="img-fluid rounded" alt="">
                                     </div>
-
-
-                                <div class="overlay position-absolute w-100 py-2 d-flex justify-content-around">
-                                    <div class="px-3 bg-light border rounded">
-                                        <span class="">-</span>
-                                        <!-- <span class="mx-3 ">1</span> -->
-                                     <input type="text"  class="productquantity" value="1"> 
-                                        <span class="">+</span>
-
                                     <div class="overlay position-absolute w-100 py-2 d-flex justify-content-around">
                                         <div class="px-3 bg-light border rounded">
                                             <span class="">-</span>
@@ -128,42 +109,30 @@
                                         </div>
                                         <i class="fas fa-heart   p-2 border rounded-circle"></i>
                                         <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
+
                                     </div>
-
-
                                 </div>
 
                                 <div>
                                     <p class="my-2">{{item.en_item_name}}</p>
                                     <h5>{{item.price}}</h5>
                                     <p>Sold by : leen el-khair</p>
-
-                                    <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add to cart</button>
+                                    <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add
+                                        to cart</button>
                                 </div>
 
 
-
-
                             </div>
-
                         </div>
-
-
-
-
                     </div>
+
                 </div>
-
             </div>
-
-
         </div>
-
-
     </div>
-
+    
 </section>
-<!-------------------main home----------------------->
+<!-------------------end main home----------------------->
 <!-----------------confirm info----------------------->
 <section>
     <div class="container py-5" *ngIf="flag">
@@ -171,7 +140,8 @@
             <div class="col-md-6 mx-auto text-center">
                 <div>
                     <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
-            contract.</span> Please create your own account and follow the necessary steps to establish your contract and follow up on your requests</p>
+                            contract.</span> Please create your own account and follow the necessary steps to establish
+                        your contract and follow up on your requests</p>
                     <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
                 </div>
             </div>
