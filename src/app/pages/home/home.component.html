@@ -18,7 +18,7 @@
                                 <li>Leaves (21)</li>
                             </ul>
                         </div>
-                        <!----------------------CATEGORIES-------------->
+                        <!---------------------end CATEGORIES-------------->
 
 
                         <!--------------------PRICE--------------------->
@@ -61,9 +61,14 @@
                 </div>
                 <!-------------------------end sidebar------------------------>
 
+                <div class="col-md-1 my-auto pl-3">
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"  *ngIf="disableLoadLess">
+                        <i class="fas fa-angle-left fa-3x text-mainColor" ></i>
+                    </button> 
+                </div>
 
                 <!--------------------------products---------------------->
-                <div class="col-md-8 offset-1">
+                <div class="col-md-7 ">
                     <div class="row">
                         <div class="col-md-12 mb">
                             <div class="d-flex justify-content-between">
@@ -94,22 +99,17 @@
                     <div class="row mt-3">
                         <div class="col-md-4 " *ngFor="let item of productList">
 
-                            <div class="product text-center my-2 border rounded shadow ">
+                            <div class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
                                 <div class="position-relative">
+
                                     <div>
-                                        <img [src]="item.image_path" class="img-fluid rounded" alt="">
+                                        <img [src]="item.image_path" class="img-fluid rounded product-img" alt="">
                                     </div>
-                                    <div class="overlay position-absolute w-100 py-2 d-flex justify-content-around">
-                                        <div class="px-3 bg-light border rounded">
-                                            <span class="">-</span>
-                                            <span class="mx-3 ">1</span>
-                                            <!-- <input type="text" name="product_quantity" id="product_quantity_123" class="productquantity" value="1"> -->
-                                            <span class="">+</span>
-                                        </div>
+                                    <!--------------product information---------------->
+                                    <div class="overlay position-absolute w-100 d-flex justify-content-end">
+                                      
                                         <i class="fas fa-heart   p-2 border rounded-circle"></i>
                                         <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
-
-
                                     </div>
                                 </div>
                                 <div>
@@ -119,24 +119,25 @@
                                     <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add
                                         to cart</button>
                                 </div>
-
-
                             </div>
+
                         </div>
                     </div>
-
-
-
-                    <div class="row justify-content-center">
-                        <div class="col-md-4" *ngIf="disableLoadMore">
-                            <button type="button" class="btn btn-lg  bg-mainColor text-white my-2" (click)="loadMore()"> Load More <span> <i class="fas fa-spinner"></i></span></button>
-                        </div>
-                    </div>
+                    <!-------------------------end display product---------------->
+                 
                 </div>
+
+                
+                <div class="col-md-1 my-auto pl-5">
+                    <button class="btn btn-light shadow rounded-circle px-3"  (click)="loadMore()"  *ngIf="disableLoadMore">
+                        <i class="fas fa-angle-right fa-3x text-mainColor"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>
-    
+
 </section>
 <!-------------------end main home----------------------->
 <!-----------------confirm info----------------------->
@@ -146,7 +147,8 @@
             <div class="col-md-6 mx-auto text-center">
                 <div>
                     <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
-                         contract.</span> Please create your own account and follow the necessary steps to establish your contract and follow up on your requests</p>
+                            contract.</span> Please create your own account and follow the necessary steps to establish
+                        your contract and follow up on your requests</p>
                     <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
                 </div>
             </div>
