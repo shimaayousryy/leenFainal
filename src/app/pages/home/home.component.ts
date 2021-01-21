@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
    productList:Products[]=[];
 
 
-    url="http://leennew.souq-athar.com/leen"
+    url="http://leennew.souq-athar.com/leen/public/"
 
   constructor(private _router: Router ,
     private homeproductServices: HomeproductService) {
@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
 
 
     let perm = localStorage.getItem('permission');
-    console.log(perm)
     if (perm != null) {
       this.flag = true;
       localStorage.clear();
@@ -49,14 +48,13 @@ export class HomeComponent implements OnInit {
       this.flag = false;
     }
 
-    // get all product 
+    // get all product
     this.homeproductServices.getAll().subscribe(
       res=>{
-        this.productList = res.map( (item) => {
-          item.image_path = this.url+item.image_path;
+        this.productList = res.data.map( (item) => {
+          item.image_path = this.url+item.image_path+item.item_image;
           return item;
         });
-      
       }
     )
   }

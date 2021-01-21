@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient , } from '@angular/common/http';
 import { END_POINTS } from './globals/global-config';
-import { Contract } from '../../models/contract.model';
 
 // about
 // const API_URL = END_POINTS.About;
@@ -16,11 +15,7 @@ export class SlideservicesService {
 
   constructor(private http: HttpClient) { }
 
-  /******************post contract method******************/
-  createContract(model:Contract):Observable<Contract>{
 
-    return this.http.post<Contract>(API_URL , model)
-  }
 
 
 

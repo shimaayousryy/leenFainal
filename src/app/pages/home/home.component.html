@@ -1,116 +1,116 @@
 <!-------------------main home----------------------->
 <section>
 
- <div class="container-fluid"  *ngIf="!flag">
+    <div class="container-fluid" *ngIf="!flag">
         <!-- catigories product -->
-    <div class="container my-5">
-        <div class="row">
-             <!-------------------------sidebar------------------------>
-            <div class="col-md-3">
-                <div class="sidebar border">
+        <div class="container my-5">
+            <div class="row">
+                <!-------------------------sidebar------------------------>
+                <div class="col-md-3">
+                    <div class="sidebar border">
 
-                    <!----------------------CATEGORIES-------------->
-                    <div>
-                        <h3 class="bg-mainColor text-light text-center  py-2 rounded">CATEGORIES</h3>
-                        <ul class="list-unstyled text-center">
-                            <li>Vegetables(25)</li>
-                            <li class="my-2">Fruits (67)</li>
-                            <li>Leaves (21)</li>
-                        </ul>
-                    </div>
-                     <!----------------------CATEGORIES-------------->
+                        <!----------------------CATEGORIES-------------->
+                        <div>
+                            <h3 class="bg-mainColor text-light text-center  py-2 rounded">CATEGORIES</h3>
+                            <ul class="list-unstyled text-center">
+                                <li>Vegetables(25)</li>
+                                <li class="my-2">Fruits (67)</li>
+                                <li>Leaves (21)</li>
+                            </ul>
+                        </div>
+                        <!----------------------CATEGORIES-------------->
 
 
-                    <!--------------------PRICE--------------------->
-                    <div>
-                        <h3 class="bg-mainColor text-light text-center h5 py-2 rounded">PRICE</h3>
-                        <ul class="list-unstyled price pl-4 py-2">
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>Less than SAR 50 (48)</span>
-                            </li>
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>SAR 51 to SAR 100 (51)
+                        <!--------------------PRICE--------------------->
+                        <div>
+                            <h3 class="bg-mainColor text-light text-center h5 py-2 rounded">PRICE</h3>
+                            <ul class="list-unstyled price pl-4 py-2">
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>Less than SAR 50 (48)</span>
+                                </li>
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>SAR 51 to SAR 100 (51)
                 </span>
-                            </li>
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>SAR 101 to SAR 200 (11)</span>
-                            </li>
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>SAR 301 to SAR 500 (0)</span>
-                            </li>
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>SAR 301 to SAR 500 (0)
+                                </li>
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>SAR 101 to SAR 200 (11)</span>
+                                </li>
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>SAR 301 to SAR 500 (0)</span>
+                                </li>
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>SAR 301 to SAR 500 (0)
                 </span>
 
-                            </li>
-                            <li class="mt-2">
-                                <input type="radio" class="mr-2" name="price">
-                                <span>More than SAR 501 (0) </span>
-                            </li>
-                        </ul>
+                                </li>
+                                <li class="mt-2">
+                                    <input type="radio" class="mr-2" name="price">
+                                    <span>More than SAR 501 (0) </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--------------------end PRICE--------------------->
+
+
                     </div>
-                    <!--------------------end PRICE--------------------->
-
-
                 </div>
-            </div>
-              <!-------------------------sidebar------------------------>
+                <!-------------------------sidebar------------------------>
 
 
-            <!--------------------------products---------------------->
-            <div class="col-md-8 offset-1">
-                <div class="row">
+                <!--------------------------products---------------------->
+                <div class="col-md-8 offset-1">
+                    <div class="row">
 
 
-                    <div class="col-md-12 mb">
-                        <div class="d-flex justify-content-between">
-                            <!---------------------headers---------------->
-                            <div class="">
-                                <h2 class="text-mainColor">All items
-                                </h2>
-                            </div>
-                            <!---------------------headers---------------->
-                    
-                            <!------------------------display by time\ price------------->
-                            <div class="dropdown">
-                                <button class="btn bg-mainColor text-white dropdown-toggle" type="button" id="triggerId"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="col-md-12 mb">
+                            <div class="d-flex justify-content-between">
+                                <!---------------------headers---------------->
+                                <div class="">
+                                    <h2 class="text-mainColor">All items
+                                    </h2>
+                                </div>
+                                <!---------------------headers---------------->
+
+                                <!------------------------display by time\ price------------->
+                                <div class="dropdown">
+                                    <button class="btn bg-mainColor text-white dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     newest first
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="triggerId">
-                                    <a class="dropdown-item text-mainColor " href="#">newest first</a>
-                                    <a class="dropdown-item text-mainColor " href="#">oldest first</a>
-                                    <a class="dropdown-item text-mainColor " href="#">price : low to high</a>
-                                    <a class="dropdown-item text-mainColor " href="#">price : high to low</a>
-                    
+                                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                                        <a class="dropdown-item text-mainColor " href="#">newest first</a>
+                                        <a class="dropdown-item text-mainColor " href="#">oldest first</a>
+                                        <a class="dropdown-item text-mainColor " href="#">price : low to high</a>
+                                        <a class="dropdown-item text-mainColor " href="#">price : high to low</a>
+
+                                    </div>
                                 </div>
+                                <!------------------------display by time\ price------------->
+
+
                             </div>
-                            <!------------------------display by time\ price------------->
-                    
-                    
+
                         </div>
-                    
-                    </div>
-                    
-                    
+
+
                     </div>
 
 
-                 <!-------------------------display product---------------->
-                <div class="row mt-3">
-                    <div class="col-md-4 " *ngFor="let item of productList">
+                    <!-------------------------display product---------------->
+                    <div class="row mt-3">
+                        <div class="col-md-4 " *ngFor="let item of productList">
 
 
-                        <div class="product text-center my-2 border rounded shadow ">
-                            <div class="position-relative">
-                                <div>
-                                    <img [src]="item.image_path" class="img-fluid rounded" alt="">
-                                </div>
+                            <div class="product text-center my-2 border rounded shadow ">
+                                <div class="position-relative">
+                                    <div>
+                                        <img [src]="item.image_path" class="img-fluid rounded" alt="">
+                                    </div>
+
 
                                 <div class="overlay position-absolute w-100 py-2 d-flex justify-content-around">
                                     <div class="px-3 bg-light border rounded">
@@ -118,86 +118,66 @@
                                         <!-- <span class="mx-3 ">1</span> -->
                                      <input type="text"  class="productquantity" value="1"> 
                                         <span class="">+</span>
+
+                                    <div class="overlay position-absolute w-100 py-2 d-flex justify-content-around">
+                                        <div class="px-3 bg-light border rounded">
+                                            <span class="">-</span>
+                                            <span class="mx-3 ">1</span>
+                                            <!-- <input type="text" name="product_quantity" id="product_quantity_123" class="productquantity" value="1"> -->
+                                            <span class="">+</span>
+                                        </div>
+                                        <i class="fas fa-heart   p-2 border rounded-circle"></i>
+                                        <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
                                     </div>
-                                    <i class="fas fa-heart   p-2 border rounded-circle"></i>
-                                    <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
+
+
+                                </div>
+
+                                <div>
+                                    <p class="my-2">{{item.en_item_name}}</p>
+                                    <h5>{{item.price}}</h5>
+                                    <p>Sold by : leen el-khair</p>
+
+                                    <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add to cart</button>
                                 </div>
 
 
-                            </div>
-
-                            <div>
-                                <p class="my-2">{{item.en_item_name}}</p>
-                                <h5>{{item.price}}</h5>
-                                <p>Sold by : leen el-khair</p>
-
-
-                                <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add to cart</button>
-
-
-
 
 
                             </div>
-
-
-
 
                         </div>
 
+
+
+
                     </div>
-
-                 
-
-
                 </div>
+
             </div>
+
 
         </div>
 
 
     </div>
-
-    <!-- pagination -->
-    <!-- <div class="container pb-3">
-        <div class="row">
-            <div class="col-md-6 ml-auto">
-                <div class="">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link text-mainColor" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
-
- </div>
 
 </section>
 <!-------------------main home----------------------->
 <!-----------------confirm info----------------------->
-<section >
-  <div  class="container py-5" *ngIf="flag">
-    <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-            <div>
-                <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
+<section>
+    <div class="container py-5" *ngIf="flag">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <div>
+                    <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
             contract.</span> Please create your own account and follow the necessary steps to establish your contract and follow up on your requests</p>
-                <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
+                    <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
+                </div>
             </div>
         </div>
-    </div>
 
-  </div>
+    </div>
 
 </section>
 <!-----------------end confirm info----------------------->
