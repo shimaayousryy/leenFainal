@@ -125,6 +125,13 @@
                         </div>
                     </div>
 
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-4" *ngIf="disableLoadMore">
+                            <button type="button" class="btn btn-lg  bg-mainColor text-white my-2" (click)="loadMore()"> Load More <span> <i class="fas fa-spinner"></i></span></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,8 +146,7 @@
             <div class="col-md-6 mx-auto text-center">
                 <div>
                     <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
-                            contract.</span> Please create your own account and follow the necessary steps to establish
-                        your contract and follow up on your requests</p>
+                         contract.</span> Please create your own account and follow the necessary steps to establish your contract and follow up on your requests</p>
                     <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
                 </div>
             </div>
