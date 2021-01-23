@@ -2,7 +2,13 @@
 
 
 @import"../../../styles.scss";
-
+.sidebar{
+    cursor: pointer;
+}
+.sidebar .categ li:hover .list{
+    margin-left: 10px;
+    transition: all 1s;
+}
 .overlay{
     text-align: center;
     bottom: 0;

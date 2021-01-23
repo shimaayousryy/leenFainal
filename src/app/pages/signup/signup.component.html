@@ -18,16 +18,22 @@
               
   
               <div class="">
-                  <form class="">
+                  <form [formGroup]='signUpForm' (ngSubmit)=' logInInfo(signUpForm)'>
                       
                      
                       <div class="form-group">
                           <!-- <label for="exampleInputEmail1">Email address</label> -->
-                          <div class="border-bottom rounded mb-4  d-flex" >
+                          <div class="border-bottom rounded   d-flex" >
                               <span><i class="far fa-user text-white  mx-5 mt-1 "></i></span> 
                     
-                              <input type="text" placeholder="Enter first name" class="form-control  border-0" id="exampleInputPassword1">
+                              <input type="text" placeholder="Enter first name" class="form-control  border-0" id="exampleInputPassword1"
+                              [class.is-valid]="signUpForm.get('first_name').errors == null && signUpForm.get('first_name').touched "
+                              formControlName='first_name'>
                           </div>
+                          <div class="alert alert-danger" role="alert"
+                                *ngIf="signUpForm.get('first_name').errors != null && signUpForm.get('first_name').touched">
+                                Enter Valid First Name
+                            </div>
                       </div>
 
                        

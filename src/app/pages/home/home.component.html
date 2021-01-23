@@ -10,11 +10,14 @@
                     <div class="sidebar border">
 
                         <!----------------------CATEGORIES-------------->
-                        <div>
+                        <div class="categ">
                             <h3 class="bg-mainColor text-light text-center  py-2 rounded">CATEGORIES</h3>
-                            <ul class="list-unstyled text-center">
-                                <li *ngFor="let prop of category" (click)="fill(prop)">{{prop.en_category_name}}
-                                    <span> ( {{prop.en_category_name.length}} )</span>
+                            <ul class="list-unstyled ml-4">
+                                <li *ngFor="let prop of category" (click)="fill(prop)">
+                                    <i class="fas fa-chevron-right text-mainColor mr-1"></i>
+                                    <span class="list">
+                                     {{prop.en_category_name}}
+                                    </span>
                                 </li>
                             </ul>
                         </div>
@@ -65,6 +68,10 @@
                     <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"  *ngIf="disableLoadLess">
                         <i class="fas fa-angle-left fa-3x text-mainColor" ></i>
                     </button> 
+
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLessProductBycategoryId()"  *ngIf="disableLoadLessProductBycategoryId">
+                        <i class="fas fa-angle-left fa-3x text-mainColor" ></i>
+                    </button> 
                 </div>
 
                 <!--------------------------products---------------------->
@@ -95,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-------------------------display product---------------->
+                    <!-------------------------display all product and product by category id --------------->
                     <div class="row mt-3">
                         <div class="col-md-4 " *ngFor="let item of productList">
 
@@ -107,7 +114,6 @@
                                     </div>
                                     <!--------------product information---------------->
                                     <div class="overlay position-absolute w-100 d-flex justify-content-end">
-                                      
                                         <i class="fas fa-heart   p-2 border rounded-circle"></i>
                                         <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
                                     </div>
@@ -120,7 +126,6 @@
                                         to cart</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <!-------------------------end display product---------------->
@@ -130,6 +135,10 @@
                 
                 <div class="col-md-1 my-auto pl-5">
                     <button class="btn btn-light shadow rounded-circle px-3"  (click)="loadMore()"  *ngIf="disableLoadMore">
+                        <i class="fas fa-angle-right fa-3x text-mainColor"></i>
+                    </button>
+
+                    <button class="btn btn-light shadow rounded-circle px-3"  (click)="loadMoreProductBycategoryId()"  *ngIf="disableLoadMoreProductBycategoryId">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>
                     </button>
                 </div>

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
  import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:'Contract' ,  loadChildren: async () => (await import('./pages/contract/contract.module')).ContractModule},
   {path:'cart' ,  loadChildren: async () => (await import('./pages/cart/cart.module')).CartModule},
   {path:'terms' ,  loadChildren: async () => (await import('./pages/terms/terms.module')).TermsModule},
-  {path:'**' , component:NotfoundComponent}
+  {path:'**' ,pathMatch: 'full', redirectTo: 'home'}
 
 ];
 

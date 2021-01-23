@@ -8,7 +8,7 @@ import { category } from './category.model';
 
 
 // API Products Called from Endpoint
-const API_product = END_POINTS.product
+const API_product = END_POINTS.product_no_action
 
 // API Products Called from Endpoint
 const API_productById = END_POINTS.product_By_Id
@@ -16,7 +16,7 @@ const API_productById = END_POINTS.product_By_Id
 
 
 // api get all category
-const API_category = END_POINTS.category
+const API_category = END_POINTS.category_no_action
 
 
 @Injectable({
@@ -43,12 +43,21 @@ export class HomeproductService {
       return this.http.get<DataWithRanking<Products>>(API_productById+`/${id}`)
     }
 
+      // get with load more
+  getAllWithLoadMoreProductWithCategoryId(id:number,page: string): Observable<DataWithRanking<Products>> {
+    let params = new HttpParams();
+    params = params.append('page', page);
+    return this.http.get<DataWithRanking<Products>>(API_productById+`/${id}`, { params: params })
+  }
+
   // get with load more
   getAllWithLoadMore(page: string): Observable<DataWithRanking<Products>> {
     let params = new HttpParams();
     params = params.append('page', page);
     return this.http.get<DataWithRanking<Products>>(API_product, { params: params })
   }
+
+
 
 
 

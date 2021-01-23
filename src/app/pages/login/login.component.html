@@ -15,29 +15,49 @@
                     </div>
 
                     <div class="px-5 mt-4">
-                        <form class="">
+                        <form [formGroup]='logInForm' (ngSubmit)=' logInInfo(logInForm)'>
 
-                            <div class="form-group my-4">
+                            <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Email address</label> -->
-                                <div class="border-bottom  rounded px-4 py-2 d-flex justify-content-center">
+                                <div class="border-bottom rounded px-4 py-2 d-flex justify-content-center">
                                     <span><i class="far fa-envelope text-white   mx-3 mt-1 "></i></span>
                                     <input type="email" placeholder="enter email"
-                                        class="form-control border-0  bg-transparent" id="exampleInputPassword1">
+                                        class="form-control border-0  bg-transparent" id="exampleInputPassword1"
+                                        [class.is-valid]="logInForm.get('email').errors == null && logInForm.get('email').touched "
+                                        formControlName='email' type="email">
+
                                 </div>
+                                <div class="alert alert-danger" role="alert"
+                                *ngIf="logInForm.get('email').errors != null && logInForm.get('email').touched">
+                                enter valid email
                             </div>
+                            </div>
+                            <!-- alert -->
+                           
+
+
                             <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom px-4 py-2 d-flex">
-                                    <span> <i class="far fa-eye-slash text-white   mx-3 mt-1 "></i>
+                                    <span> <i class="far fa-eye-slash text-white  mx-3 mt-1 "></i>
                                     </span>
                                     <input type="password" placeholder="Enter Password"
-                                        class="form-control border-0 bg-transparent" id="exampleInputPassword1">
+                                        class="form-control border-0 bg-transparent" id="exampleInputPassword1"
+                                        [class.is-valid]="logInForm.get('password').errors == null && logInForm.get('password').touched"
+                                        formControlName='password' type="password">
+                                </div>
+                                <!-- alert -->
+                                <div class="alert alert-danger"
+                                    *ngIf="logInForm.get('password').errors != null && logInForm.get('password').touched "
+                                    role="alert">
+                                    enter valid password
                                 </div>
                             </div>
 
 
                             <div class="text-center ">
-                                <button type="submit" class="btn text-white bg-mainColor my-3">login</button>
+                                <button [disabled]='logInForm.invalid' type="submit"
+                                    class="btn text-white bg-mainColor my-3">login</button>
                                 <p class="text-black-50">forget password</p>
                                 <p class="text-center ">Don't have an account? <span
                                         class="border-bottom font-weight-bold">sign up</span></p>

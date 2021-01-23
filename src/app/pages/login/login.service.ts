@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
 
 
 @Injectable({
@@ -6,7 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class loginService {
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
+
+
+    // PostOnlineServices(model: OnlineSupport): Observable<OnlineSupport> {
+    //   return this.http.post<OnlineSupport>(API_URL_OnlineSupport, model);
+    // }
 
   }
 
