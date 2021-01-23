@@ -2,13 +2,24 @@
 
 
 @import"../../../styles.scss";
+
+/****************** sidebar ***********************/
 .sidebar{
     cursor: pointer;
 }
 .sidebar .categ li:hover .list{
     margin-left: 10px;
     transition: all 1s;
+    
 }
+
+.sidebar .categ li span {
+  font-size: 18px;
+}
+
+
+
+/************* overlay of product (icon haverable)  ***************/
 .overlay{
     text-align: center;
     bottom: 0;
@@ -25,11 +36,6 @@
     padding-left: 6px;
     background-color: transparent;
 }
-.overlay input:focus{
-    box-shadow: none !important;
-    border: 0;
-}
-
 
 .product:hover .overlay i{
     visibility: visible;
@@ -39,11 +45,23 @@
     background-color: $mainColor; 
 }
 
-.confirm{
-    font-size: 20px;
-    line-height: 2;
+
+
+/****************** product slider  ***********************/
+.slider button{
+    animation-name: slider;
+    animation-duration: 1s;
 }
 
+@keyframes slider {
+    0%   {  filter: blur(10px);}
+    25%  {  filter: blur(9px);}
+    50%  {  filter: blur(6px);}
+    75%  {  filter: blur(3px);}
+    100% {  filter: blur(0px);}
+  }
+
+/************** drop of showing product***************/
 .dropdown-menu a:hover{
     color: $mainColor;
 }
@@ -53,12 +71,16 @@
     border-radius: 50px;
 }
 
+
 .swal2-styled.swal2-confirm {
     background-color: #27c454 !important;
    
 }
 
-// img{
-//     filter: drop-shadow(2px 4px 6px black);
 
-// }
+
+  /******************* confirmation section *********************/
+.confirm{
+    font-size: 20px;
+    line-height: 2;
+}

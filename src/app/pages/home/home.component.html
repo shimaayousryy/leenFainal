@@ -9,19 +9,20 @@
                 <div class="col-md-3">
                     <div class="sidebar border">
 
-                        <!----------------------CATEGORIES-------------->
+                        <!----------------------display product by id-------------->
                         <div class="categ">
-                            <h3 class="bg-mainColor text-light text-center  py-2 rounded">CATEGORIES</h3>
+                            <h4 class="bg-mainColor text-light text-center py-2 rounded">CATEGORIES</h4>
                             <ul class="list-unstyled ml-4">
-                                <li *ngFor="let prop of category" (click)="fill(prop)">
-                                    <i class="fas fa-chevron-right text-mainColor mr-1"></i>
-                                    <span class="list">
-                                     {{prop.en_category_name}}
+                                <li *ngFor="let prop of category" (click)="fill(prop)"
+                                    class="animate__animated animate__backInUp mt-1">
+                                    <span class="">
+                                        <i class="fas fa-chevron-right text-mainColor mr-1"></i>
+                                        <span class="list"> {{prop.en_category_name}}</span>
                                     </span>
                                 </li>
                             </ul>
                         </div>
-                        <!---------------------end CATEGORIES-------------->
+
 
 
                         <!--------------------PRICE--------------------->
@@ -57,34 +58,38 @@
                                 </li>
                             </ul>
                         </div>
-                        <!--------------------end PRICE--------------------->
+
 
 
                     </div>
                 </div>
-                <!-------------------------end sidebar------------------------>
 
-                <div class="col-md-1 my-auto pl-3">
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"  *ngIf="disableLoadLess">
-                        <i class="fas fa-angle-left fa-3x text-mainColor" ></i>
-                    </button> 
 
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLessProductBycategoryId()"  *ngIf="disableLoadLessProductBycategoryId">
-                        <i class="fas fa-angle-left fa-3x text-mainColor" ></i>
-                    </button> 
+                <!-----------------------slider left buttons------------------------->
+                <div class=" slider col-md-1 my-auto pl-3">
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"
+                        *ngIf="disableLoadLess">
+                        <i class="fas fa-angle-left fa-3x text-mainColor"></i>
+                    </button>
+
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLessProductBycategoryId()"
+                        *ngIf="disableLoadLessProductBycategoryId">
+                        <i class="fas fa-angle-left fa-3x text-mainColor"></i>
+                    </button>
                 </div>
 
-                <!--------------------------products---------------------->
+
+                <!--------------------------display products---------------------->
                 <div class="col-md-7 ">
                     <div class="row">
                         <div class="col-md-12 mb">
                             <div class="d-flex justify-content-between">
-                                <!---------------------headers---------------->
+                                <!---------------------title---------------->
                                 <div class="">
                                     <h2 class="text-mainColor">All items</h2>
                                 </div>
-                                <!---------------------end headers---------------->
-                                <!------------------------display by time\ price------------->
+
+                                <!------------------------dropdown of time and price------------->
                                 <div class="dropdown">
                                     <button class="btn bg-mainColor text-white dropdown-toggle" type="button"
                                         id="triggerId" data-toggle="dropdown" aria-haspopup="true"
@@ -98,7 +103,7 @@
                                         <a class="dropdown-item text-mainColor " href="#">price : high to low</a>
                                     </div>
                                 </div>
-                                <!------------------------end display by time\ price------------->
+
                             </div>
                         </div>
                     </div>
@@ -106,7 +111,8 @@
                     <div class="row mt-3">
                         <div class="col-md-4 " *ngFor="let item of productList">
 
-                            <div class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
+                            <div
+                                class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
                                 <div class="position-relative">
 
                                     <div>
@@ -128,27 +134,28 @@
                             </div>
                         </div>
                     </div>
-                    <!-------------------------end display product---------------->
-                 
+                    <!-------------------------end display all product and product by category id ---------------->
+
                 </div>
 
-                
-                <div class="col-md-1 my-auto pl-5">
-                    <button class="btn btn-light shadow rounded-circle px-3"  (click)="loadMore()"  *ngIf="disableLoadMore">
+                <!-----------------------slider right buttons------------------------->
+                <div class="slider col-md-1 my-auto pl-5">
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMore()"
+                        *ngIf="disableLoadMore">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>
                     </button>
 
-                    <button class="btn btn-light shadow rounded-circle px-3"  (click)="loadMoreProductBycategoryId()"  *ngIf="disableLoadMoreProductBycategoryId">
+                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMoreProductBycategoryId()"
+                        *ngIf="disableLoadMoreProductBycategoryId">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
-
 </section>
-<!-------------------end main home----------------------->
+
+
 <!-----------------confirm info----------------------->
 <section>
     <div class="container py-5" *ngIf="flag">
@@ -166,4 +173,3 @@
     </div>
 
 </section>
-<!-----------------end confirm info----------------------->

@@ -73,8 +73,8 @@ export class HomeComponent implements OnInit {
       this.flag = false;
     }
 
-    // get all product + storing pages using localStorage and display products by pagination 
-    //check if number of storage pages less or greater than number of total number
+    // set all product + storing pages using localStorage and display products by pagination 
+    // display products
     this.homeproductServices.getAll().subscribe(
       res => {
         localStorage.setItem('page', Object.values(res)[0]);
@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
           console.log((localStorage.getItem('page')))
         }
 
-        
+
         this.productList = res.data.map((item) => {
           item.image_path = this.url + item.image_path + item.item_image;
           return item;
@@ -125,14 +125,14 @@ export class HomeComponent implements OnInit {
   }
 
 
-  // button load more product with IPaginator
+    // button load more product with IPaginator
+    //check if number of storage pages less than number of total number to show next products from pagination.
   loadMore() {
     this.disableLoadMoreProductBycategoryId = false;
     this.disableLoadLessProductBycategoryId = false;
     if ((Number(localStorage.getItem('totalpage')) - Number(localStorage.getItem('page'))) == 1) {
       this.disableLoadMore = false;
     }
-
 
     this.pageNumber = 1 + Number(localStorage.getItem('page'))
     localStorage.setItem('page', String(this.pageNumber))
@@ -151,7 +151,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
-
+    // button load more product with IPaginator
+    //check if number of storing pages more than number of total number to show previous products from pagination.
   loadLess() {
     this.disableLoadMoreProductBycategoryId = false;
     this.disableLoadLessProductBycategoryId = false;
@@ -184,8 +185,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  /////////////////////// category /////////////////////////
-
+  /*****************get category*********************/
   getAllCategory() {
     this.homeproductServices.getAllCategory().subscribe(
       res => {
@@ -227,7 +227,8 @@ export class HomeComponent implements OnInit {
 
   }
 
-
+  // button load more products by id with IPaginator
+    //check if number of storing pages less than number of total number to show previous products by id from pagination.
   loadLessProductBycategoryId() {
 
     // diasble button of all product to able button of product by category id 
@@ -266,6 +267,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  // button load more products by id with IPaginator
+    //check if number of storing pages more than number of total number to show previous products by id from pagination.
   loadMoreProductBycategoryId() {
     // diasble button of all product to able button of product by category id 
     this.disableLoadMore = false;
