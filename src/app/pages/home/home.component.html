@@ -1,3 +1,61 @@
+<div class="header-img">
+    <div class="container-fluid overLay row position-absolute d-flex justify-content-center align-items-end">
+       <div class="container header-content">
+           <div class="row">
+               <div class="col-lg-10 col-md-12 ml-auto ">
+                <div class="row">
+                  
+                    <!--------------------- search --------------------------->
+                    
+                <div class="col-lg-9 col-md-12 pb-4">
+                    <div class="d-flex search">
+                        <input type="text" placeholder="search" class="form-control">
+                        <button class="btn ml-1 bg-mainColor text-white">search</button>
+                    </div>
+                </div>
+                <!--------------------- Selected Items --------------------------->
+                <div class="col-lg-3 col-md-12">
+                    <div class="selected-items text-center">
+                        <i class="fas fa-shopping-basket fa-3x text-mainColor"></i>
+                        <span class="ml-1 text-white">Selected Items</span>
+                    </div>
+               </div>
+
+
+               <!-----------------------categ--------------------------------->
+             
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <ul class="navbar-nav">
+                    <li class="nav-item nav-link"  *ngFor="let prop of category" (click)="fill(prop)"> 
+                        <span class=" text-white">
+                        <!-- <i class="fas fa-chevron-right text-mainColor mr-1"></i> -->
+                        <span class="list-categ"> {{prop.en_category_name}}
+                            <div class="line"></div>
+                        </span>
+                        
+                    </span>
+                </li>
+                  
+                </ul>
+                </div>
+              </nav>
+
+
+   </div>
+               </div>
+           </div>
+       
+       </div>
+    </div>
+</div>
+
+
 <!-------------------main home----------------------->
 <section>
 
@@ -6,12 +64,12 @@
         <div class="container my-5">
             <div class="row">
                 <!-------------------------sidebar------------------------>
-                <div class="col-md-3">
-                    <div class="sidebar border">
+                <div class="col-lg-3 col-md-12">
+                    <div class="sidebar mt-3">
 
                         <!----------------------display product by id-------------->
-                        <div class="categ">
-                            <h4 class="bg-mainColor text-light text-center py-2 rounded">CATEGORIES</h4>
+                        <!-- <div class="categ">
+                            <h4 class="bg-mainColor text-light text-center py-1 rounded">CATEGORIES</h4>
                             <ul class="list-unstyled ml-4">
                                 <li *ngFor="let prop of category" (click)="fill(prop)"
                                     class="animate__animated animate__backInUp mt-1">
@@ -21,40 +79,37 @@
                                     </span>
                                 </li>
                             </ul>
-                        </div>
-
-
-
+                        </div> -->
                         <!--------------------PRICE--------------------->
                         <div>
                             <h3 class="bg-mainColor text-light text-center h5 py-2 rounded">PRICE</h3>
                             <ul class="list-unstyled price pl-4 py-2">
-                                <li class="mt-2">
+                                <li class="">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>Less than SAR 50 (48)</span>
+                                    <span>Less than SAR 50 </span>
                                 </li>
-                                <li class="mt-2">
+                                <li class="mt-3">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 51 to SAR 100 (51)
+                                    <span>SAR 51 to SAR 100 
                                     </span>
                                 </li>
-                                <li class="mt-2">
+                                <li class="mt-3">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 101 to SAR 200 (11)</span>
+                                    <span>SAR 101 to SAR 200 </span>
                                 </li>
-                                <li class="mt-2">
+                                <li class="mt-3">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 301 to SAR 500 (0)</span>
+                                    <span>SAR 301 to SAR 500 </span>
                                 </li>
-                                <li class="mt-2">
+                                <li class="mt-3">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 301 to SAR 500 (0)
+                                    <span>SAR 301 to SAR 500
                                     </span>
 
                                 </li>
-                                <li class="mt-2">
+                                <li class="mt-3">
                                     <input type="radio" class="mr-2" name="price">
-                                    <span>More than SAR 501 (0) </span>
+                                    <span>More than SAR 501 </span>
                                 </li>
                             </ul>
                         </div>
@@ -66,7 +121,7 @@
 
 
                 <!-----------------------slider left buttons------------------------->
-                <div class=" slider col-md-1 my-auto pl-3">
+                <div class="slider left-slider col-lg-1 col-md-1 my-auto">
                     <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"
                         *ngIf="disableLoadLess">
                         <i class="fas fa-angle-left fa-3x text-mainColor"></i>
@@ -80,7 +135,7 @@
 
 
                 <!--------------------------display products---------------------->
-                <div class="col-md-7 ">
+                <div class="col-lg-7 col-md-10">
                     <div class="row">
                         <div class="col-md-12 mb">
                             <div class="d-flex justify-content-between">
@@ -109,7 +164,7 @@
                     </div>
                     <!-------------------------display all product and product by category id --------------->
                     <div class="row mt-3">
-                        <div class="col-md-4 " *ngFor="let item of productList">
+                        <div class="col-lg-4 col-md-6" *ngFor="let item of productList">
 
                             <div
                                 class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
@@ -139,7 +194,7 @@
                 </div>
 
                 <!-----------------------slider right buttons------------------------->
-                <div class="slider col-md-1 my-auto pl-5">
+                <div class="slider ccol-lg-1 col-md-1 my-auto ">
                     <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMore()"
                         *ngIf="disableLoadMore">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>

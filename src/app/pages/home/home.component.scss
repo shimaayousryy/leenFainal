@@ -4,7 +4,7 @@
 @import"../../../styles.scss";
 
 /****************** sidebar ***********************/
-.sidebar{
+.sidebar {
     cursor: pointer;
 }
 .sidebar .categ li:hover .list{
@@ -17,7 +17,39 @@
   font-size: 18px;
 }
 
+.list-categ {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 20px;
+     
+}
+.list-categ:hover{
+  color: $mainColor;
+  transition: all 1s;
+}
+.line{
+    padding-top:2px;
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 20px;
+    background-color: $mainColor
+}
+.list-categ:hover .line{
+    
+    width: 40px;
+    transition: all 1s ease-in-out;
+}
 
+@media only screen and (max-width: 979px) {
+        .navbar{
+             background-color: $mainColor;
+             border-radius: 20px;
+        }
+        .line{
+            display: none;
+        }
+     
+      }
 
 /************* overlay of product (icon haverable)  ***************/
 .overlay{
@@ -84,3 +116,66 @@
     font-size: 20px;
     line-height: 2;
 }
+
+/*********** media query of slider **********/
+// @media only screen and (max-width: 600px) {
+//     .slider{
+
+
+//     }
+//   }
+
+
+// .header-img{
+//     background-image: url(../../../assets/images/promo-bg-2.jpg);
+//     background-size: cover;
+//     width: 100%;
+//     height: 100%;
+// }
+
+
+
+.header-img{
+    background-image: url(../../../assets/images/promo-bg-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height:40%;
+    width: 100%;
+    position: relative;
+}
+
+// .header-img .navbar{
+//     z-index: 9999999999;
+// }
+.header-img .overLay{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ 
+    background-color: rgba(13, 14, 13, 0.5);
+}
+.header-img .overLay h1{
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 979px) {
+    .header-img{
+        height: 60%;
+       
+    }
+    .overLay{
+        align-items: flex-start !important;
+
+    }
+
+    .header-content{
+        margin-top: 25px;
+    }
+  }
+
+
+// new
+// .list-categ {
+    
+// }

@@ -16,9 +16,10 @@ ngOnInit(): void {
   this.signUpForm = new FormGroup({
     'first_name' : new FormControl(null , [Validators.maxLength(10) , Validators.required]  ),
     'last_name' : new FormControl(null , [Validators.maxLength(10) , Validators.required]  ),
-  
+    'phone' : new FormControl(null , [Validators.minLength(10) , Validators.required] ) ,
     'email' : new FormControl(null , [Validators.email , Validators.required]  ),
-    'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)])
+    'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)]),
+    'confirmPassword' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)])
   })
  }
 

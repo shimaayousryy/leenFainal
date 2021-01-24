@@ -5,7 +5,9 @@
 
 .nav-color{
     // background-color: #29B063;
-    background-color: $mainColor;
+    background-color: rgb(127,126,127)
+    
+  
 }
 // .nav-text-color{
 //     color: $mainColor;
@@ -26,7 +28,7 @@
     position: absolute;
     top:30%;
     right: 3px;
-    
+    z-index:999999999999999999 ;
 }
 .setting-spinner .setting{
     max-height: 40px;

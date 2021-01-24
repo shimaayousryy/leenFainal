@@ -38,3 +38,7 @@ input:focus , .dropdown-toggle:focus{
 .dropdown-menu a{
     color: white;
 }
+.dropdown-menu a:hover{
+    color: $mainColor;
+}
+
