@@ -2,28 +2,51 @@
 
 @import "../../../styles.scss";
 
-
+//    navbar
 .nav-color{
-    // background-color: #29B063;
-    background-color: rgb(127,126,127)
+    background-color: #b5bdb21c
     
-  
-}
-// .nav-text-color{
-//     color: $mainColor;
-// }
-.nav-product a{
-    color: $mainColor !important;
 }
 
-@media only screen and (max-width: 600px) {
-    .selected-items ,.search {
-      margin-top: 16px;
-    }
-  }
+.nav-item .nav-link {
+  font-size: 20px;
+  margin-left: 30px;
+  color:$mainColor !important;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
 
+.navbar-nav .nav-item{
+text-align: center;
+}
+.nav-item .nav-link:before, .nav-item .nav-link:after{
+  position: absolute;
+  opacity: 0;
+  width: 0%;
+  height: 2px;
+  content: '';
+  background: $mainColor;
+  transition: all 0.3s;
+}
 
+.nav-item .nav-link:before{
+  left: 0px;
+    top: 0px;
+} 
 
+.nav-item .nav-link:after{
+  right: 0px;
+    bottom: 0px;
+}
+
+.nav-item .nav-link:hover:before, .nav-item .nav-link:hover:after{
+  opacity: 1;
+  width: 100%;
+}
+
+// language sppiner icon
 .setting-spinner{
     position: absolute;
     top:30%;
@@ -41,67 +64,3 @@
   width: 30px;
   margin-right: 10px;
 }
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #000;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #000;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-

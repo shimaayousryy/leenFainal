@@ -1,12 +1,11 @@
-<div class="header-img">
-    <div class="container-fluid overLay row position-absolute d-flex justify-content-center align-items-end">
-       <div class="container header-content">
-           <div class="row">
-               <div class="col-lg-10 col-md-12 ml-auto ">
-                <div class="row">
-                  
-                    <!--------------------- search --------------------------->
-                    
+<!-------------------main home----------------------->
+<section>
+
+    <div class="" *ngIf="!flag">
+        <!-- CATEGORIES product -->
+        <div class="container my-5">
+            <div class="row my-5">
+                <!--------------------- search --------------------------->
                 <div class="col-lg-9 col-md-12 pb-4">
                     <div class="d-flex search">
                         <input type="text" placeholder="search" class="form-control">
@@ -19,109 +18,22 @@
                         <i class="fas fa-shopping-basket fa-3x text-mainColor"></i>
                         <span class="ml-1 text-white">Selected Items</span>
                     </div>
-               </div>
-
-
-               <!-----------------------categ--------------------------------->
-             
-
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <ul class="navbar-nav">
-                    <li class="nav-item nav-link"  *ngFor="let prop of category" (click)="fill(prop)"> 
-                        <span class=" text-white">
-                        <!-- <i class="fas fa-chevron-right text-mainColor mr-1"></i> -->
-                        <span class="list-categ"> {{prop.en_category_name}}
-                            <div class="line"></div>
-                        </span>
-                        
-                    </span>
-                </li>
-                  
-                </ul>
                 </div>
-              </nav>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-2 col-sm-3 mx-auto" *ngFor="let prop of category">
+                    <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
+                    <h6 class="list-categ " (click)="fill(prop)"> {{prop.en_category_name}}
+                        <div class="line"></div>
+                    </h6>
 
-
-   </div>
-               </div>
-           </div>
-       
-       </div>
-    </div>
-</div>
-
-
-<!-------------------main home----------------------->
-<section>
-
-    <div class="container-fluid" *ngIf="!flag">
-        <!-- CATEGORIES product -->
-        <div class="container my-5">
-            <div class="row">
-                <!-------------------------sidebar------------------------>
-                <div class="col-lg-3 col-md-12">
-                    <div class="sidebar mt-3">
-
-                        <!----------------------display product by id-------------->
-                        <!-- <div class="categ">
-                            <h4 class="bg-mainColor text-light text-center py-1 rounded">CATEGORIES</h4>
-                            <ul class="list-unstyled ml-4">
-                                <li *ngFor="let prop of category" (click)="fill(prop)"
-                                    class="animate__animated animate__backInUp mt-1">
-                                    <span class="">
-                                        <i class="fas fa-chevron-right text-mainColor mr-1"></i>
-                                        <span class="list"> {{prop.en_category_name}}</span>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <!--------------------PRICE--------------------->
-                        <div>
-                            <h3 class="bg-mainColor text-light text-center h5 py-2 rounded">PRICE</h3>
-                            <ul class="list-unstyled price pl-4 py-2">
-                                <li class="">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>Less than SAR 50 </span>
-                                </li>
-                                <li class="mt-3">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 51 to SAR 100 
-                                    </span>
-                                </li>
-                                <li class="mt-3">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 101 to SAR 200 </span>
-                                </li>
-                                <li class="mt-3">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 301 to SAR 500 </span>
-                                </li>
-                                <li class="mt-3">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>SAR 301 to SAR 500
-                                    </span>
-
-                                </li>
-                                <li class="mt-3">
-                                    <input type="radio" class="mr-2" name="price">
-                                    <span>More than SAR 501 </span>
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-                    </div>
                 </div>
+            </div>
 
 
+            <div class="row py-5">
                 <!-----------------------slider left buttons------------------------->
-                <div class="slider left-slider col-lg-1 col-md-1 my-auto">
+                <!-- <div class="slider left-slider col-lg-1 col-md-1 my-auto">
                     <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"
                         *ngIf="disableLoadLess">
                         <i class="fas fa-angle-left fa-3x text-mainColor"></i>
@@ -132,12 +44,12 @@
                         <i class="fas fa-angle-left fa-3x text-mainColor"></i>
                     </button>
                 </div>
-
+ -->
 
                 <!--------------------------display products---------------------->
-                <div class="col-lg-7 col-md-10">
+                <div class="col-lg-12 col-md-10">
                     <div class="row">
-                        <div class="col-md-12 mb">
+                        <div class="col-md-12">
                             <div class="d-flex justify-content-between">
                                 <!---------------------title---------------->
                                 <div class="">
@@ -163,38 +75,62 @@
                         </div>
                     </div>
                     <!-------------------------display all product and product by category id --------------->
-                    <div class="row mt-3">
-                        <div class="col-lg-4 col-md-6" *ngFor="let item of productList">
-
-                            <div
-                                class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
-                                <div class="position-relative">
-
-                                    <div>
-                                        <img [src]="item.image_path" class="img-fluid rounded product-img" alt="">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row mt-3">
+                                            <div class="col-lg-3 col-md-6" *ngFor="let item of productList">
+        
+                                                <div
+                                                    class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
+                                                    <div class="position-relative">
+        
+                                                        <div>
+                                                            <img [src]="item.image_path" class="img-fluid rounded product-img"
+                                                                alt="">
+                                                        </div>
+                                                        <!--------------product information---------------->
+                                                        <div class="overlay position-absolute w-100 d-flex justify-content-end">
+                                                            <i class="fas fa-heart   p-2 border rounded-circle"></i>
+                                                            <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <p class="my-2">{{item.en_item_name}}</p>
+                                                        <h5>{{item.price}}</h5>
+        
+                                                        <button class="btn bg-mainColor text-white my-2"
+                                                            (click)=" addToCart()">add to cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--------------product information---------------->
-                                    <div class="overlay position-absolute w-100 d-flex justify-content-end">
-                                        <i class="fas fa-heart   p-2 border rounded-circle"></i>
-                                        <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
-                                    </div>
+        
                                 </div>
-                                <div>
-                                    <p class="my-2">{{item.en_item_name}}</p>
-                                    <h5>{{item.price}}</h5>
-                                    <p>Sold by : leen el-khair</p>
-                                    <button class="btn bg-mainColor text-white my-2" (click)=" addToCart()">add
-                                        to cart</button>
-                                </div>
+                                <a class="carousel-control-prev " role="button" data-slide="prev">
+                                    <span class="fas fa-angle-left fa-3x text-mainColor" (click)="loadLess()"
+                                        *ngIf="disableLoadLess" aria-hidden="true"></span>
+                                    <span class="sr-only r">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" role="button" data-slide="next">
+                                    <span class="fas fa-angle-right fa-3x text-mainColor" (click)="loadMore()"
+                                        *ngIf="disableLoadMore" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
+        
                         </div>
                     </div>
-                    <!-------------------------end display all product and product by category id ---------------->
+
+
 
                 </div>
 
                 <!-----------------------slider right buttons------------------------->
-                <div class="slider ccol-lg-1 col-md-1 my-auto ">
+                <!-- <div class="slider col-lg-1 col-md-1 my-auto ">
                     <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMore()"
                         *ngIf="disableLoadMore">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>
@@ -204,7 +140,9 @@
                         *ngIf="disableLoadMoreProductBycategoryId">
                         <i class="fas fa-angle-right fa-3x text-mainColor"></i>
                     </button>
-                </div>
+                </div> -->
+
+
             </div>
         </div>
     </div>
@@ -228,3 +166,7 @@
     </div>
 
 </section>
+
+
+
+<!--slider-->

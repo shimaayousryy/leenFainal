@@ -189,7 +189,12 @@ export class HomeComponent implements OnInit {
   getAllCategory() {
     this.homeproductServices.getAllCategory().subscribe(
       res => {
-        this.category = res;
+        this.category = res.map((item) => {
+          item.image_path = this.url + item.image_path + item.category_image;
+          return item;
+        });
+        // this.category = res;
+        // console.log(this.category)
       }
     )
   }
