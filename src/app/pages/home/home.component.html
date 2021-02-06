@@ -13,6 +13,11 @@
                 <div class="col-lg-12 col-md-10">
 
 
+<section class="">
+    <div class="" *ngIf="!flag">
+        <!-- CATEGORIES product -->
+        <div class="my-5">
+
                     <!--------------------- search --------------------------->
                     <div class="row mt-5">
                         <div class="col-lg-9  mx-auto">
@@ -26,10 +31,35 @@
                         </div>
                     </div>
 
+
                     <div class="row py-5 ">
                         <!-----------------sidebar--------------------->
                         <div class="col-lg-4 col-md-6 py-3 mt-5">
                             <div class="rounded shadow p-3 mx-4 mt-5">
+            <div class="row py-5 ">
+                <!-----------------sidebar--------------------->
+                <div class="col-lg-3 col-md-6 py-3 mt-5">
+                    <div class="rounded shadow p-3 mt-5">
+                        <div class="">
+                            <h4 class="text-mainColor ">Categroy</h4>
+                            <div class="line"></div>
+                            <ul class="list-unstyled ml-5">
+                                <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1" (click)="fill(prop)">
+                                    <a>
+                                        <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
+                                        <span class="font-weight-bold">{{prop.en_category_name}}</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!--------------------------display products---------------------->
+                <div class="col-lg-7 col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <div class="d-flex justify-content-between">
+                                <!---------------------title---------------->
                                 <div class="">
                                     <h4 class="text-mainColor ">Categroy</h4>
                                     <div class="line"></div>
