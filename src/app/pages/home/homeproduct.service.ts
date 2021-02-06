@@ -6,14 +6,21 @@ import { END_POINTS } from '../../shared/services/api/globals/global-config';
 import { DataWithRanking } from '../../shared/models/data-with-ranking.model';
 import { category } from './category.model';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a27b93b (update)
 // API Products Called from Endpoint
 const API_product = END_POINTS.product_no_action
 
 // API Products Called from Endpoint
 const API_productById = END_POINTS.product_By_Id
 
+<<<<<<< HEAD
 
+=======
+// const API_productByPrice = END_POINTS.product_By_price
+>>>>>>> a27b93b (update)
 
 // api get all category
 const API_category = END_POINTS.category_no_action
@@ -67,6 +74,15 @@ export class HomeproductService {
   getAllCategory(): Observable<category[]> {
     return this.http.get<category[]>(API_category)
   }
+<<<<<<< HEAD
+=======
+
+
+  // get product by price
+  // getProductByPrice(): Observable<Products[]> {
+  //   return this.http.get<Products[]>(API_productByPrice)
+  // }
+>>>>>>> a27b93b (update)
 }
 
 

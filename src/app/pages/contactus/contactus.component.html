@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <div class="container py-5">
@@ -63,19 +64,80 @@
         </div>
 
         <div class="col-lg-5 my-auto pl-5">
+=======
+<div class="container py-5">
+    <div class="row mt-5">
+          <!-- Complaints and suggestions form -->
+        <div class="col-lg-7 col-md-8 mx-auto my-auto">
+
+            <div class="contactUs">
+                <h2 class="text-center">Complaints and suggestions  
+                </h2>
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+          
+            <form [formGroup]='cotactUsForm' class="">
+
+                <div class="form-group my-4">
+                    <label for="exampleInputEmail1"> <span class="text-danger">*</span> Title :</label>
+
+                    <input type="text" class="form-control "
+                        [class.is-valid]="cotactUsForm.get('title').errors == null && cotactUsForm.get('title').touched"
+                        [(ngModel)]="contactUsObj.title" formControlName='title'>
+
+                    <div class="alert alert-danger" role="alert"
+                        *ngIf="cotactUsForm.get('title').errors != null && cotactUsForm.get('title').touched">
+                        This Feild Is required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><span class="text-danger">*</span> Details :</label>
+
+                    <input type="" class="form-control"
+                        [class.is-valid]="cotactUsForm.get('details').errors == null && cotactUsForm.get('details').touched "
+                        [(ngModel)]="contactUsObj.details" formControlName='details'>
+                    <div class="alert alert-danger" role="alert"
+                        *ngIf="cotactUsForm.get('details').errors != null && cotactUsForm.get('details').touched">
+                        This Feild Is required
+                    </div>
+                </div>
+
+                <div class="text-center ">
+                    <button type="submit" class="btn btn-lg text-white bg-mainColor my-3"
+                        [disabled]='cotactUsForm.invalid' (click)=" createContactUsForm()">send your details</button>
+                </div>
+
+
+            </form>
+        </div>
+        <!-- address section -->
+        <div class="col-lg-5  my-auto pl-5">
+>>>>>>> a27b93b (update)
             <div class="text-center">
                 <i class="fas fa-map-marker-alt text-mainColor fa-9x"></i>
             </div>
             <div class="address my-5 text-black-50 text-center">
                 <h4 class="text-mainColor mb-3">Our Address
+<<<<<<< HEAD
                     
                 </h4>
                 <p >Sheikh Mohammed Bin Rashed Boulevard, Downtown Dubai,
                  31166 - Dubai, Next of the Armond building Road
                  United Arab Emirates</p>
+=======
+                </h4>
+                <p>Sheikh Mohammed Bin Rashed Boulevard, Downtown Dubai, 31166 - Dubai, Next of the Armond building Road United Arab Emirates</p>
+>>>>>>> a27b93b (update)
             </div>
 
 
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> a27b93b (update)

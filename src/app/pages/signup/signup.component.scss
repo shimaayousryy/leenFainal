@@ -19,4 +19,17 @@ input:focus , select:focus{
 }
 
 
+<<<<<<< HEAD
 
+=======
+.dropdown-item:hover{
+    color: white;
+    background-color: $mainColor;
+}
+.dropdown button{
+    box-shadow: none;
+}
+.account{
+    cursor: pointer;
+}
+>>>>>>> a27b93b (update)

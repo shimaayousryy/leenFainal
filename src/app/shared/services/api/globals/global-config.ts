@@ -13,14 +13,40 @@ export class END_POINTS {
     public static product_no_action =   LeenAPI_URL + "/all_product";
     public static category_no_action =   LeenAPI_URL + "/all_category"; 
 
+<<<<<<< HEAD
 
+=======
+    // public static product_By_price =   LeenAPI_URL + "/product_price"; 
+   
+>>>>>>> a27b93b (update)
   // api category
   // public static category =   LeenAPI_URL + "/category";
 
   //api  sign_up
   public static sign_up =   LeenAPI_URL + "/auth/register";
+<<<<<<< HEAD
  
 
+=======
+
+  // api cites
+  public static city = LeenAPI_URL + "/all_city"
+ 
+ // api contract
+  public static contract = LeenAPI_URL + "/user_contract"
+    //api contract duration
+    public static contract_duration = LeenAPI_URL + "/all_duration"
+     //api contract timing
+     public static contract_timing = LeenAPI_URL + "/all_timing"
+  // contactUs api
+  public static contact_us = LeenAPI_URL + "/contact_us"
+
+   // login api
+   public static log_in = LeenAPI_URL + "/auth/login"
+
+      // confirm phone number api
+      public static confirm_number = LeenAPI_URL + "/otp-resend"
+>>>>>>> a27b93b (update)
 }
 
 

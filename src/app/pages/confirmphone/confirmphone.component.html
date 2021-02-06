@@ -1,0 +1,27 @@
+
+<section>
+    
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+           <div>
+            <h3 class="text-mainColor mb-5 text-center">confirm your mobile number</h3>
+         
+            <div class="border p-3 rounded">
+                <div class="ml-3">
+                    <p>Enter Your Confirmation Number</p>
+                     <p>Sent To : <span>+966505434048</span></p>
+                </div>
+                <form [formGroup]='confirmCodeForm'>
+                    <input type="number" class="form-control"  [class.is-valid]="confirmCodeForm.get('code').errors == null && confirmCodeForm.get('code').touched " formControlName='code' [(ngModel)]="codeObj.code">
+                    <button class="submit" class="btn mt-3 btn-lg text-white bg-mainColor"  (click)="confirmCode();">Confirm</button>
+                 </form>
+            </div>
+   
+           </div>
+        </div>
+    </div>
+</div>
+</section>
+
+

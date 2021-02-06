@@ -8,11 +8,15 @@
                         <div class="text-center  login ">
                             <h2 class="text-white">create contract</h2>
                         </div>
+<<<<<<< HEAD
                         <!-------------------end contract title------------------------->
+=======
+>>>>>>> a27b93b (update)
 
                         <!--------------------contract form --------------------------->
                         <div class="px-5 mt-4">
                             <div class="">
+<<<<<<< HEAD
                                 <!----------------------- Starting date --------------------->
                                 <div class="form-group">
 
@@ -97,6 +101,67 @@
 
             </div>
 
+=======
+                                <!---Starting date --->
+                                <div class="form-group">
+                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+                                        <span class="   mx-3 mt-1 ">Starting </span>
+                                        <input type="date" class="form-control border-0" id="" [(ngModel)]="contractObj.contract_start_date">
+                                     </div>
+                                </div>
+                                <!--- ending date --->
+                                <div class="form-group">
+                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+                                        <span class="mx-3 mt-1 ">Ending </span>
+                                        <input type="date" class="form-control border-0" id=""
+                                            [(ngModel)]="contractObj.contract_end_date">
+                                    </div>
+                                </div>
+                                <!--------------------- delivary--------------------------->
+                                <div class="form-group mt-4 row">
+
+
+                                    <!--- delivary period --->
+                                    <div class="col-md-6 mt-1">
+                                        <div class="dropdown show">
+                                            <a class="btn bg-transparent border-bottom text-white delivary" href="#"
+                                                role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                delivary period : <span> {{contractObj.delivery_duration}} </span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a *ngFor="let duration of durationList"
+                                                    (click)="fillDuration(duration)" class="dropdown-item">
+                                                    {{duration.en_delivery_duration}} </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--- delivary time --->
+                                    <div class="col-md-6 mt-1">
+                                        <div class="dropdown show">
+                                            <a class="btn bg-transparent text-white border-bottom delivary" href="#"
+                                                role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                delivary time : <span> {{contractObj.delivery_timing}}</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a *ngFor="let time of timeList" (click)="fillTime(time)" class="dropdown-item">{{time.en_delivery_timing}} </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="float-right">
+                                    <button (click)=" createNewContract()" type="submit"
+                                        class="btn text-white bg-mainColor my-3">create contract</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> a27b93b (update)
         </div>
     </div>
 </section>

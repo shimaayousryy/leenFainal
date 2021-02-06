@@ -4,6 +4,7 @@
 .contactUs div{
     background-color: $mainColor;
     padding: 1px;
+<<<<<<< HEAD
     width: 100px;
     text-align: center;
     
@@ -13,3 +14,17 @@
     padding:1px;
     width: 100px;
 }
+=======
+    margin: 7px auto ; 
+}
+
+.contactUs .line1{
+    width: 150px;
+}
+.contactUs .line2{
+    width: 100px;
+}
+.contactUs .line3{
+    width: 50px;
+}
+>>>>>>> a27b93b (update)

@@ -15,6 +15,11 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
+=======
+import { ConfirminfoComponent } from './confirminfo/confirminfo/confirminfo.component';
+import { ConfirmphoneComponent } from './confirmphone/confirmphone.component';
+>>>>>>> a27b93b (update)
 
 
 
@@ -23,7 +28,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+<<<<<<< HEAD
   ],
+=======
+  ConfirminfoComponent,
+
+
+
+  ConfirmphoneComponent],
+>>>>>>> a27b93b (update)
   imports: [
      CommonModule,
      BrowserAnimationsModule,

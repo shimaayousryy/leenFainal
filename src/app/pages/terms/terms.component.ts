@@ -15,9 +15,13 @@ export class TermsComponent implements OnInit {
   goToConfirmNum(){
     this.flag = false;
   }
+<<<<<<< HEAD
   goToCcompanyinfo(){
     this._router.navigate(['companyinfo'])
   }
+=======
+
+>>>>>>> a27b93b (update)
 
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 @import "~ng-zorro-antd/ng-zorro-antd.min.css";
 @import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
 @import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
@@ -10,6 +11,21 @@
 }
 $mainColor:rgb(143, 184, 61);
 
+=======
+// @import "~ng-zorro-antd/ng-zorro-antd.min.css";
+// @import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+// @import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
+// @font-face {
+//     font-family: 'Fira Sans', sans-serif;
+//     // src:  url(./assets/fonts/FiraSans-Black.ttf) format("truetype");
+//     src:  url(./assets/fonts/FiraSans-Black.ttf);
+// }
+
+
+ $mainColor:rgb(143, 184, 61);
+// $mainColor:#03c48a;
+>>>>>>> a27b93b (update)
 
 .bg-mainColor{
     background-color: $mainColor;
