@@ -1,43 +1,24 @@
 <!-------------------main home----------------------->
-<section>
-
-    <div class="" *ngIf="!flag">
-        <!-- CATEGORIES product -->
-        <div class="container my-5">
-            
-           
-            <div class="row py-5">
-
-
-                <!--------------------------display products---------------------->
-                <div class="col-lg-12 col-md-10">
-
-
 <section class="">
     <div class="" *ngIf="!flag">
         <!-- CATEGORIES product -->
         <div class="my-5">
 
-                    <!--------------------- search --------------------------->
-                    <div class="row mt-5">
-                        <div class="col-lg-9  mx-auto">
-                            <div class="row ">
-                                <div class="col-lg-10 mx-auto col-md-12">
-                                    <div class="search d-flex">
-                                        <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
-                                    </div>
-                                </div>
+            <!--------------------- search --------------------------->
+            <div class="row mt-5">
+                <div class="col-lg-9  mx-auto">
+                    <div class="row ">
+                        <div class="col-lg-10 mx-auto col-md-12">
+                            <div class="search d-flex">
+                                <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
 
-                    <div class="row py-5 ">
-                        <!-----------------sidebar--------------------->
-                        <div class="col-lg-4 col-md-6 py-3 mt-5">
-                            <div class="rounded shadow p-3 mx-4 mt-5">
             <div class="row py-5 ">
-                <!-----------------sidebar--------------------->
                 <div class="col-lg-3 col-md-6 py-3 mt-5">
                     <div class="rounded shadow p-3 mt-5">
                         <div class="">
@@ -48,7 +29,8 @@
                                     <a>
                                         <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
                                         <span class="font-weight-bold">{{prop.en_category_name}}</span>
-                                    </a></li>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
 
@@ -57,27 +39,9 @@
                 <!--------------------------display products---------------------->
                 <div class="col-lg-7 col-md-6">
                     <div class="row">
-                        <div class="col-md-12 mt-4">
-                            <div class="d-flex justify-content-between">
-                                <!---------------------title---------------->
-                                <div class="">
-                                    <h4 class="text-mainColor ">Categroy</h4>
-                                    <div class="line"></div>
-                                    <ul class="list-unstyled ml-5">
-                                        <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1"
-                                            (click)="fill(prop)">
-                                            <a>
-                                                <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
-                                                <span class="font-weight-bold">{{prop.en_category_name}}</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
 
-                            </div>
-                        </div>
                         <!--------------------------display products---------------------->
-                        <div class="col-lg-8 col-md-6">
+                        <div class="col-lg-12 col-md-6">
                             <div class="row">
                                 <div class="col-md-12 mt-4">
                                     <div class="d-flex justify-content-between">
@@ -89,14 +53,14 @@
                                 </div>
                             </div>
                             <!-------------------------display all product and product by category id --------------->
-                    
 
                             <div class="row mt-3 ">
                                 <div class="col-lg-4 col-md-6 " *ngFor="let item of productList |search:term">
-                                    <div  class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
-                                        <div data-toggle="modal" data-target="#exampleModalCenter" (click)="DisplayDetails(item)">
-                                            <img [src]="item.image_path"
-                                                class="img-fluid rounded product-img" alt="">
+                                    <div
+                                        class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
+                                        <div data-toggle="modal" data-target="#exampleModalCenter"
+                                            (click)="DisplayDetails(item)">
+                                            <img [src]="item.image_path" class="img-fluid rounded product-img" alt="">
                                         </div>
                                         <div>
                                             <h4 class="my-3 text-mainColor">{{item.en_item_name}}</h4>
@@ -143,13 +107,10 @@
 
                 </div>
 
-
-
             </div>
-
         </div>
     </div>
-    
+
 </section>
 
 
