@@ -1,15 +1,16 @@
 
-
-<nav class="bg-mainColor">
+<nav class=" ">
     <div class="">
-
-        <button class="navbar-toggler bg-mainColor ml-5 mt-5" data-target="#my-nav" data-toggle="collapse"
+        <div class="img-nav">
+            <img src="../../../assets/images/logo.png" class="w-50 rounded-circle" alt="" style="width: 150px !important;">
+        </div>
+        <button class="navbar-toggler mt-3 ml-3" data-target="#my-nav" data-toggle="collapse"
             aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon text-light"> <i class="fas fa-bars"></i> </span>
+            <span class="navbar-toggler-icon text-mainColor"> <i class="fas fa-bars fa-2x"></i> </span>
         </button>
 
         <div id="my-nav" class="collapse navbar-collapse">
-            <ul class="list-unstyled bg-mainColor mt-5">
+            <ul class="list-unstyled  mt-3">
                 <li class="nav-item ">
                     <a class="nav-link mr-2 " [routerLinkActive]="['active']"
                         [routerLink]="['home']">Home </a>
@@ -39,6 +40,33 @@
                 </li>
             </ul>
         </div>
-      
+
+         
     </div>
 </nav>
+
+   <!-- language spinner -->
+   <div class="setting-spinner d-flex justify-align-center">
+    <div class="setting bg-light  rounded">
+        <i (click)="showSpinnerSitting()" class="fas fa-cog fa-spin fa-2x text-mainColor "></i>
+    </div>
+    <div *ngIf="show" class=" bg-light border rounded px-3">
+        <!-----------------------------languages----------------------->
+        <div class="lang py-3 border-bottom">
+            <h6 class="text-mainColor">Language</h6>
+            <div class=" arabEng">
+                <div class=" mr-4">
+                    <img src="../../../assets/images/saudi-arabia.png" alt="">
+                    <span>Arabic</span>
+                </div>
+
+                <div class="">
+                    <img src="../../../assets/images/english-language.png" alt="">
+                    <span class="">English</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

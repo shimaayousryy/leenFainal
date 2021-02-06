@@ -20,12 +20,6 @@ export class HomeComponent implements OnInit {
   flag: boolean = false;
   name: String = "shimaa";
 
-  // homeporoductList Array
-
-  // page number to loading more
-  pageNumber: number;
-
-
   term:string;
   // homeporoductList Array
   productList: Products[] = [];
@@ -41,8 +35,10 @@ export class HomeComponent implements OnInit {
 
 
   // page number to loading more
+  pageNumber: number;
   pageNumArr:Pagination[]=[];
   page:number =1;
+
   // url to display image
   url = "http://leennew.souq-athar.com/leen/public/";
 
@@ -59,24 +55,22 @@ export class HomeComponent implements OnInit {
 
 
 
-
   constructor(private _router: Router,
     private homeproductServices: HomeproductService) {
 
+    
   }
-
-
-
-
 
   ngOnInit(): void {
 
-
+   this.productObj =new Products();
     // init main object of  category
     this.categoryObj = new category();
-
+     
+    // this.productByPriceObj = new ProductsByPrice();
     // main method category get All
     this.getAllCategory();
+    // this.getProductByPrice();
 
     localStorage.removeItem('page');
 
@@ -94,6 +88,11 @@ export class HomeComponent implements OnInit {
       res => {
         localStorage.setItem('page', Object.values(res)[0]);
         localStorage.setItem('totalpage', Object.values(res)[4]);
+
+       localStorage.setItem('totalpage', Object.values(res)[4]);
+
+      let a = Number(localStorage.getItem('totalpage'));
+
         if (localStorage.getItem('totalpage') != localStorage.getItem('page')) {
           this.disableLoadMore = true;
         }
@@ -104,13 +103,22 @@ export class HomeComponent implements OnInit {
         }
 
 
+    
         this.productList = res.data.map((item) => {
+       
           item.image_path = this.url + item.image_path + item.item_image;
           return item;
         });
       }
     )
+
   }
+
+    
+      // this.getProductByPrice()
+
+
+
   inject(arg0: string[]) {
     throw new Error('Method not implemented.');
   }
@@ -154,6 +162,15 @@ export class HomeComponent implements OnInit {
 
     if (localStorage.getItem('page') != '1') {
       this.disableLoadLess = true;
+
+    
+    this.pageNumber = 1 + Number(localStorage.getItem('page'))
+    localStorage.setItem('page', String(this.pageNumber))
+    
+    if (localStorage.getItem('page') != '1') {
+      this.disableLoadLess = true;
+      //pagination 
+      this.page = Number(localStorage.getItem('page'));
     }
 
     this.homeproductServices.getAllWithLoadMore(String(this.pageNumber)).subscribe(
@@ -165,6 +182,7 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+}
 
     // button load more product with IPaginator
     //check if number of storing pages more than number of total number to show previous products from pagination.
@@ -176,6 +194,7 @@ export class HomeComponent implements OnInit {
       this.disableLoadLess = false;
     } else {
       this.disableLoadLess = true;
+
     }
 
     this.pageNumber = Number(localStorage.getItem('page')) - 1;
@@ -186,6 +205,13 @@ export class HomeComponent implements OnInit {
       this.disableLoadMore = true;
     } else if (localStorage.getItem('page') == '1') {
       this.disableLoadLess = false;
+
+      this.page = Number(localStorage.getItem('page'));
+     
+      this.disableLoadMore = true;
+    } else if (localStorage.getItem('page') == '1') {
+      this.disableLoadLess = false;
+      this.page =1
 
     }
 
@@ -210,9 +236,12 @@ export class HomeComponent implements OnInit {
         });
         // this.category = res;
         // console.log(this.category)
+      
       }
     )
   }
+
+
 
   //// fill id to get data from category
   fill(prop: category) {
@@ -244,6 +273,14 @@ export class HomeComponent implements OnInit {
         });
       }
     )
+
+  }
+
+  FillSingleProduct(item: Products){
+    this.productObj.image_path = item.image_path;
+    this.productObj.en_item_name = item.en_item_name;
+    this.productObj.en_description = item.en_description;
+    this.productObj.price = item.price;
 
   }
 
@@ -287,6 +324,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
+
+  
   // button load more products by id with IPaginator
     //check if number of storing pages more than number of total number to show previous products by id from pagination.
   loadMoreProductBycategoryId() {
@@ -319,14 +358,7 @@ export class HomeComponent implements OnInit {
     )
   }
 
-
-  DisplayDetails(item:Products){
-    this.productObj.image_path = item.image_path;
-    this.productObj.en_item_name = item.en_item_name;
-    this.productObj.price = item.price;
-    this.productObj.en_description = item.en_description;
-
-
-
-  }
 }
+
+  
+

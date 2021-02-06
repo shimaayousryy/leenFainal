@@ -1,140 +1,75 @@
-<!-------------------main home----------------------->
-<section class="">
-    <div class="" *ngIf="!flag">
-        <!-- CATEGORIES product -->
-        <div class="my-5">
-
-            <!--------------------- search --------------------------->
-            <div class="row mt-5">
-                <div class="col-lg-9  mx-auto">
-                    <div class="row ">
-                        <div class="col-lg-10 mx-auto col-md-12">
-                            <div class="search d-flex">
-                                <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row py-5 ">
-                <div class="col-lg-3 col-md-6 py-3 mt-5">
-                    <div class="rounded shadow p-3 mt-5">
-                        <div class="">
-                            <h4 class="text-mainColor ">Categroy</h4>
-                            <div class="line"></div>
-                            <ul class="list-unstyled ml-5">
-                                <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1" (click)="fill(prop)">
-                                    <a>
-                                        <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
-                                        <span class="font-weight-bold">{{prop.en_category_name}}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <!--------------------------display products---------------------->
-                <div class="col-lg-7 col-md-6">
-                    <div class="row">
-
-                        <!--------------------------display products---------------------->
-                        <div class="col-lg-12 col-md-6">
-                            <div class="row">
-                                <div class="col-md-12 mt-4">
-                                    <div class="d-flex justify-content-between">
-                                        <!---------------------title---------------->
-                                        <div class="">
-                                            <h2 class="text-mainColor ml-5 ">Items</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-------------------------display all product and product by category id --------------->
-
-                            <div class="row mt-3 ">
-                                <div class="col-lg-4 col-md-6 " *ngFor="let item of productList |search:term">
-                                    <div
-                                        class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
-                                        <div data-toggle="modal" data-target="#exampleModalCenter"
-                                            (click)="DisplayDetails(item)">
-                                            <img [src]="item.image_path" class="img-fluid rounded product-img" alt="">
-                                        </div>
-                                        <div>
-                                            <h4 class="my-3 text-mainColor">{{item.en_item_name}}</h4>
-                                            <h5 class="mb-3 text-mainColor">
-                                                <span class="text-dark">Price :</span>
-                                                <span class="price"> {{item.price | currency : 'SAR '}}</span>
-                                            </h5>
-                                            <button class="btn btn-lg bg-mainColor text-white my-2"
-                                                (click)=" addToCart()">
-                                                <span class="mr-3">Add To Cart</span>
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </button>
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--------pagination---------->
-                        <div class="col-lg-2 col-md-4 mx-auto">
-                            <div class="pagination mt-5 d-flex justify-content-between">
-                                <a>
-                                    <span class="fas fa-angle-left fa-3x text-mainColor" (click)="loadLess()"
-                                        *ngIf="disableLoadLess" aria-hidden="true"></span>
-
-                                </a>
-
-                                <ul class="list-unstyled d-flex ">
-                                    <li class=" bg-mainColor text-white px-3 py-2 rounded-circle">{{page}}</li>
-                                </ul>
-                                <a>
-                                    <i class="fas fa-angle-right fa-3x text-mainColor" (click)="loadMore()"
-                                        *ngIf="disableLoadMore" aria-hidden="true"></i>
-
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-<!-----------------confirm info----------------------->
 <section>
-    <div class="container py-5" *ngIf="flag">
-        <div class="row">
-            <div class="col-md-6 mx-auto text-center">
-                <div>
-                    <p class="confirm"><span class="text-mainColor">This page is for products that are included in your
-                            contract.</span> Please create your own account and follow the necessary steps to establish
-                        your contract and follow up on your requests</p>
-                    <button class="btn btn-lg bg-mainColor text-white" (click)="getTerms()"> confirm </button>
+    <div class="container">
+      <!--------------------- search --------------------------->
+      <div class="row mt-5">
+        <div class="col-lg-9  mx-auto">
+            <div class="row ">
+                <div class="col-lg-10 mx-auto col-md-12">
+                    <div class="search d-flex">
+                        <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
+                    </div>
                 </div>
             </div>
         </div>
+      </div>
+
+      <div class="row">
+             <!-----------------sidebar--------------------->
+      <div class="col-lg-4  py-3 mt-5">
+        <div class="rounded shadow p-3 mt-5">
+            <div class="">
+                <h4 class="text-mainColor ">Categroy</h4>
+                <div class="line"></div>
+                <ul class="list-unstyled ml-5">
+                    <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1" (click)="fill(prop)">
+                        <a>
+                            <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
+                            <span class="font-weight-bold">{{prop.en_category_name}}</span>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-8  mt-5 ">
+       
+       <div class="row ">
+        <div class="col-lg-4 col-md-6" *ngFor="let item of productList |search:term">
+            <div class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
+                <div data-toggle="modal" data-target="#exampleModalCenter"
+                    (click)="DisplayDetails(item)">
+                    <img [src]="item.image_path" class="img-fluid rounded product-img" alt="" (click)=" FillSingleProduct(item)">
+                </div>
+                <div>
+                    <h4 class="my-3 text-mainColor">{{item.en_item_name}}</h4>
+                    <h5 class="mb-3 text-mainColor">
+                        <span class="text-dark">Price :</span>
+                        <span class="price"> {{item.price | currency : 'SAR '}}</span>
+                    </h5>
+                    <button class="btn btn-lg bg-mainColor text-white my-2"
+                        (click)=" addToCart()">
+                        <span class="mr-3">Add To Cart</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
+                </div>
+
+
+
+            </div>
+        </div>
+  
+       </div>
 
     </div>
 
+
+    <!--------------------------display products---------------------->
+</div>
+    </div>
 </section>
 
-
-
-<!--slider-->
 
 <!-- Modal to display description of products -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
