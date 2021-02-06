@@ -1,190 +1,72 @@
 <!-------------------main home----------------------->
 <section>
-<<<<<<< HEAD
 
     <div class="" *ngIf="!flag">
         <!-- CATEGORIES product -->
         <div class="container my-5">
-            <div class="row my-5">
-                <!--------------------- search --------------------------->
-                <div class="col-lg-9 col-md-12 pb-4">
-                    <div class="d-flex search">
-                        <input type="text" placeholder="search" class="form-control">
-                        <button class="btn ml-1 bg-mainColor text-white">search</button>
-                    </div>
-                </div>
-                <!--------------------- Selected Items --------------------------->
-                <div class="col-lg-3 col-md-12">
-                    <div class="selected-items text-center">
-                        <i class="fas fa-shopping-basket fa-3x text-mainColor"></i>
-                        <span class="ml-1 text-white">Selected Items</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-2 col-sm-3 mx-auto" *ngFor="let prop of category">
-                    <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
-                    <h6 class="list-categ " (click)="fill(prop)"> {{prop.en_category_name}}
-                        <div class="line"></div>
-                    </h6>
-
-                </div>
-            </div>
-
-
+            
+           
             <div class="row py-5">
-                <!-----------------------slider left buttons------------------------->
-                <!-- <div class="slider left-slider col-lg-1 col-md-1 my-auto">
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLess()"
-                        *ngIf="disableLoadLess">
-                        <i class="fas fa-angle-left fa-3x text-mainColor"></i>
-                    </button>
 
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadLessProductBycategoryId()"
-                        *ngIf="disableLoadLessProductBycategoryId">
-                        <i class="fas fa-angle-left fa-3x text-mainColor"></i>
-                    </button>
-                </div>
- -->
 
                 <!--------------------------display products---------------------->
                 <div class="col-lg-12 col-md-10">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="d-flex justify-content-between">
-                                <!---------------------title---------------->
-                                <div class="">
-                                    <h2 class="text-mainColor">All items</h2>
-                                </div>
 
-                                <!------------------------dropdown of time and price------------->
-                                <div class="dropdown">
-                                    <button class="btn bg-mainColor text-white dropdown-toggle" type="button"
-                                        id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        newest first
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="triggerId">
-                                        <a class="dropdown-item text-mainColor " href="#">newest first</a>
-                                        <a class="dropdown-item text-mainColor " href="#">oldest first</a>
-                                        <a class="dropdown-item text-mainColor " href="#">price : low to high</a>
-                                        <a class="dropdown-item text-mainColor " href="#">price : high to low</a>
+
+                    <!--------------------- search --------------------------->
+                    <div class="row mt-5">
+                        <div class="col-lg-9  mx-auto">
+                            <div class="row ">
+                                <div class="col-lg-10 mx-auto col-md-12">
+                                    <div class="search d-flex">
+                                        <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
                                     </div>
                                 </div>
-
-=======
-    <div class="" *ngIf="!flag">
-        <!-- CATEGORIES product -->
-        <div class="container my-5">
-
-            <!--------------------- search --------------------------->
-            <div class="row mt-5">
-                <div class="col-lg-9  mx-auto">
-                    <div class="row ">
-                        <div class="col-lg-10 mx-auto col-md-12">
-                            <div class="search d-flex">
-                                <input type="text" [(ngModel)]="term" placeholder="search" class="form-control">
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row py-5 ">
-                <!-----------------sidebar--------------------->
-                <div class="col-lg-4 col-md-6 py-3 mt-5">
-                    <div class="rounded shadow p-3 mx-4 mt-5">
-                        <div class="">
-                            <h4 class="text-mainColor ">Categroy</h4>
-                            <div class="line"></div>
-                            <ul class="list-unstyled ml-5">
-                                <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1" (click)="fill(prop)">
-                                    <a>
-                                        <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
-                                        <span class="font-weight-bold">{{prop.en_category_name}}</span>
-                                    </a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <!--------------------------display products---------------------->
-                <div class="col-lg-8 col-md-6">
-                    <div class="row">
-                        <div class="col-md-12 mt-4">
-                            <div class="d-flex justify-content-between">
-                                <!---------------------title---------------->
+                    <div class="row py-5 ">
+                        <!-----------------sidebar--------------------->
+                        <div class="col-lg-4 col-md-6 py-3 mt-5">
+                            <div class="rounded shadow p-3 mx-4 mt-5">
                                 <div class="">
-                                    <h2 class="text-mainColor ml-5 ">Items</h2>
+                                    <h4 class="text-mainColor ">Categroy</h4>
+                                    <div class="line"></div>
+                                    <ul class="list-unstyled ml-5">
+                                        <li *ngFor="let prop of category" class="border-bottom mt-3 pb-1"
+                                            (click)="fill(prop)">
+                                            <a>
+                                                <img [src]="prop.image_path" class="category-img rounded-circle" alt="">
+                                                <span class="font-weight-bold">{{prop.en_category_name}}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
->>>>>>> a27b93b (update)
+
                             </div>
                         </div>
-                    </div>
-                    <!-------------------------display all product and product by category id --------------->
-                    <div class="row">
-                        <div class="col-lg-12">
-<<<<<<< HEAD
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="row mt-3">
-                                            <div class="col-lg-3 col-md-6" *ngFor="let item of productList">
-        
-                                                <div
-                                                    class="product text-center mt-3 border rounded shadow  animate__animated animate__backInRight">
-                                                    <div class="position-relative">
-        
-                                                        <div>
-                                                            <img [src]="item.image_path" class="img-fluid rounded product-img"
-                                                                alt="">
-                                                        </div>
-                                                        <!--------------product information---------------->
-                                                        <div class="overlay position-absolute w-100 d-flex justify-content-end">
-                                                            <i class="fas fa-heart   p-2 border rounded-circle"></i>
-                                                            <i class="fas fa-shopping-cart  p-2 border rounded-circle"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="my-2">{{item.en_item_name}}</p>
-                                                        <h5>{{item.price}}</h5>
-        
-                                                        <button class="btn bg-mainColor text-white my-2"
-                                                            (click)=" addToCart()">add to cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <!--------------------------display products---------------------->
+                        <div class="col-lg-8 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 mt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <!---------------------title---------------->
+                                        <div class="">
+                                            <h2 class="text-mainColor ml-5 ">Items</h2>
                                         </div>
                                     </div>
-        
                                 </div>
-                                <a class="carousel-control-prev " role="button" data-slide="prev">
-                                    <span class="fas fa-angle-left fa-3x text-mainColor" (click)="loadLess()"
-                                        *ngIf="disableLoadLess" aria-hidden="true"></span>
-                                    <span class="sr-only r">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" role="button" data-slide="next">
-                                    <span class="fas fa-angle-right fa-3x text-mainColor" (click)="loadMore()"
-                                        *ngIf="disableLoadMore" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             </div>
-        
-                        </div>
-                    </div>
+                            <!-------------------------display all product and product by category id --------------->
+                    
 
-=======
                             <div class="row mt-3 ">
                                 <div class="col-lg-4 col-md-6 " *ngFor="let item of productList |search:term">
-                                    <div
-                                        class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
-                                        <div class="position-relative">
-                                            <div>
-                                                <img [src]="item.image_path" class="product-img img-fluid rounded"
-                                                    alt="" data-toggle="modal" data-target="#exampleModalCenter"
-                                                    (click)="FillSingleProduct(item)">
-                                            </div>
-
+                                    <div  class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
+                                        <div data-toggle="modal" data-target="#exampleModalCenter" (click)="DisplayDetails(item)">
+                                            <img [src]="item.image_path"
+                                                class="img-fluid rounded product-img" alt="">
                                         </div>
                                         <div>
                                             <h4 class="my-3 text-mainColor">{{item.en_item_name}}</h4>
@@ -226,39 +108,21 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
->>>>>>> a27b93b (update)
 
 
                 </div>
 
-<<<<<<< HEAD
-                <!-----------------------slider right buttons------------------------->
-                <!-- <div class="slider col-lg-1 col-md-1 my-auto ">
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMore()"
-                        *ngIf="disableLoadMore">
-                        <i class="fas fa-angle-right fa-3x text-mainColor"></i>
-                    </button>
-
-                    <button class="btn btn-light shadow rounded-circle px-3" (click)="loadMoreProductBycategoryId()"
-                        *ngIf="disableLoadMoreProductBycategoryId">
-                        <i class="fas fa-angle-right fa-3x text-mainColor"></i>
-                    </button>
-                </div> -->
 
 
-=======
->>>>>>> a27b93b (update)
             </div>
+
         </div>
     </div>
+    
 </section>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a27b93b (update)
 <!-----------------confirm info----------------------->
 <section>
     <div class="container py-5" *ngIf="flag">
@@ -272,7 +136,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
 
     </div>
 
@@ -281,9 +144,7 @@
 
 
 <!--slider-->
-=======
-    </div>
-</section>
+
 <!-- Modal to display description of products -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
@@ -312,7 +173,7 @@
                                 <div class=" mt-3 ml-2">
                                     <h5 class="text-mainColor">Description ... </h5>
                                     <div class="pline ml-1"></div>
-                                    <p class=""> {{productObj.en_description | seemore:200}}</p>
+                                    <p class=""> {{productObj.en_description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -326,4 +187,3 @@
         </div>
     </div>
 </div>
->>>>>>> a27b93b (update)

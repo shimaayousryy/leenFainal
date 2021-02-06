@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-// export class UserLogin{
 
-// }
-=======
+
 export class UserLogin{
 
     email:string;
@@ -11,4 +8,3 @@ export class UserLogin{
 
     
 }
->>>>>>> a27b93b (update)

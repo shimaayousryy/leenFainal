@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> a27b93b (update)
 @import"../../../styles.scss";
 
 /****************** sidebar ***********************/
 .sidebar {
     cursor: pointer;
 }
-<<<<<<< HEAD
 .sidebar .categ li:hover .list{
     margin-left: 10px;
     transition: all 1s;
@@ -68,7 +62,7 @@
     transform: rotate(360deg);
     color: white;
     background-color: $mainColor; 
-=======
+}
  .line{
     width: 30px;
     background-color: #000;
@@ -86,18 +80,15 @@
 }
 input::placeholder{
     color: rgb(107, 101, 101);
->>>>>>> a27b93b (update)
 }
 
 
 
-<<<<<<< HEAD
 /****************** product slider  ***********************/
 .slider button{
-=======
+}
 // product slider  
 .pagination span{
->>>>>>> a27b93b (update)
     animation-name: slider;
     animation-duration: 1s;
 }
@@ -110,7 +101,6 @@ input::placeholder{
     100% {  filter: blur(0px);}
   }
 
-<<<<<<< HEAD
 /************** drop of showing product***************/
 .dropdown-menu a:hover{
     color: $mainColor;
@@ -130,17 +120,15 @@ input::placeholder{
 
 
   /******************* confirmation section *********************/
-=======
+
 
   // confirmation section 
->>>>>>> a27b93b (update)
 .confirm{
     font-size: 20px;
     line-height: 2;
 }
 
 
-<<<<<<< HEAD
 .carousel-control-prev{
     // background: #000;
     margin-left: -166px;
@@ -153,7 +141,6 @@ input::placeholder{
 // .carousel .carousel-control-prev .carousel-control-prev-icon{
 //    color: turquoise !important;
 // }
-=======
 .modal .modal-dialog .modal-content .modal-body .product  p{
     font-size: 15px;
     line-height: 1.6;
@@ -173,4 +160,3 @@ input::placeholder{
 .price{
     font-size: 16px;
 }
->>>>>>> a27b93b (update)

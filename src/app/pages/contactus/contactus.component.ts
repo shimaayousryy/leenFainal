@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import {FormControl , FormGroup , Validators} from '@angular/forms'
-=======
-import {FormControl , FormGroup , Validators} from '@angular/forms';
-
-import {ContactUs} from './contactus.model' ;
+import { from } from 'rxjs';
+import { ContactUs } from './contactus.model';
 import {ContactusService} from './contactus.service'
->>>>>>> a27b93b (update)
 @Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
@@ -14,20 +10,7 @@ import {ContactusService} from './contactus.service'
 })
 export class ContactusComponent implements OnInit {
 
-<<<<<<< HEAD
-  cotactUsForm:FormGroup;
-  constructor() { }
 
-  ngOnInit(): void {
-    this.cotactUsForm = new FormGroup({
-      'name' : new FormControl(null , [Validators.maxLength(30) , Validators.required]  ),
-      'phone' : new FormControl(null , [Validators.minLength(10) , Validators.required] ) ,
-      'email' : new FormControl(null , [Validators.email , Validators.required]  ),
-    
-      })
-   }
-
-=======
  
    // ContactUs array
    contactUs:ContactUs[]=[];  
@@ -54,8 +37,4 @@ export class ContactusComponent implements OnInit {
      })
    }
 
-
-
-  
->>>>>>> a27b93b (update)
 }

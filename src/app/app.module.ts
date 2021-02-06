@@ -20,14 +20,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
-=======
+
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 
 
 
->>>>>>> a27b93b (update)
 
 registerLocaleData(en);
 
@@ -48,14 +46,9 @@ registerLocaleData(en);
     NzButtonModule,
     NzUploadModule,
     SharedModule,
-<<<<<<< HEAD
-    RouterModule
-=======
     RouterModule,
-    NgxPaginationModule,
-    DropDownsModule,
+
     BrowserAnimationsModule
->>>>>>> a27b93b (update)
 
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

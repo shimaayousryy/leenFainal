@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 
-=======
 import { END_POINTS } from '../../shared/services/api/globals/global-config';
 import {HttpClient} from '@angular/common/http'
 import {Contract} from './contract.model'
@@ -12,25 +10,10 @@ import {Timing} from './time.model';
 const API_contract = END_POINTS.contract; 
 const API_contract_duration = END_POINTS.contract_duration;
 const API_contract_timing = END_POINTS.contract_timing;
->>>>>>> a27b93b (update)
 
 @Injectable({
   providedIn: 'root'
 })
-<<<<<<< HEAD
-export class contractService {
-
-  constructor() { }
-
-  }
-
-
-
-
-
-
-=======
-
 
 
 export class ContractService {
@@ -54,4 +37,3 @@ export class ContractService {
     return this.http.get<Timing[]>(API_contract_timing )
   }
 }
->>>>>>> a27b93b (update)

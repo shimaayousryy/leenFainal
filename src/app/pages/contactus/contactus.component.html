@@ -1,70 +1,3 @@
-<<<<<<< HEAD
-
-
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-7 col-md-8 mx-auto ">
-
-            <div class="contactUs">
-                <h2 class="">Contact Us
-                   <div></div>
-                </h2>
-            </div>
-            <form [formGroup]='cotactUsForm' (ngSubmit)=' cotactUsForm(cotactUsForm)'>
-                    
-                <div class="form-group my-4">
-                   <label for="exampleInputEmail1"> <span class="text-danger">*</span> Enter your full name :</label> 
-                    
-                        <input type="text"  class="form-control " id="exampleInputPassword1" [class.is-valid]="cotactUsForm.get('name').errors == null && cotactUsForm.get('name').touched "
-                        formControlName='name'>
-
-                        <div class="alert alert-danger" role="alert"
-                        *ngIf="cotactUsForm.get('name').errors != null && cotactUsForm.get('name').touched">
-                        Enter Valid Name
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1"><span class="text-danger">*</span> Enter your mobile number :</label> 
-                   
-                        <input type="" class="form-control" id="exampleInputPassword1"  [class.is-valid]="cotactUsForm.get('phone').errors == null && cotactUsForm.get('phone').touched "
-                        formControlName='phone'>
-                        <div class="alert alert-danger" role="alert"
-                        *ngIf="cotactUsForm.get('phone').errors != null && cotactUsForm.get('phone').touched">
-                        Enter Valid phone
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1"><span class="text-danger">*</span>Enter your valid Email Id :</label> 
-                   
-                        <input type="email" class="form-control" id="exampleInputemail" [class.is-valid]="cotactUsForm.get('email').errors == null && cotactUsForm.get('email').touched "
-                        formControlName='email'>
-                        <div class="alert alert-danger" role="alert"
-                        *ngIf="cotactUsForm.get('email').errors != null && cotactUsForm.get('email').touched">
-                        Enter Valid email
-                    </div>
-                    
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1"><span class="text-danger">*</span>Enter your requirements/details :</label> 
-                    <textarea name="" class="form-control" id="" cols="30" rows="5" required></textarea>
-                </div>
-
-             
-               <div class="text-center ">
-                <button type="submit" class="btn btn-lg text-white bg-mainColor my-3">send your details</button>
-               </div>
-
-              
-            </form>
-
-
-
-        </div>
-
-        <div class="col-lg-5 my-auto pl-5">
-=======
 <div class="container py-5">
     <div class="row mt-5">
           <!-- Complaints and suggestions form -->
@@ -115,29 +48,16 @@
         </div>
         <!-- address section -->
         <div class="col-lg-5  my-auto pl-5">
->>>>>>> a27b93b (update)
             <div class="text-center">
                 <i class="fas fa-map-marker-alt text-mainColor fa-9x"></i>
             </div>
             <div class="address my-5 text-black-50 text-center">
                 <h4 class="text-mainColor mb-3">Our Address
-<<<<<<< HEAD
-                    
-                </h4>
-                <p >Sheikh Mohammed Bin Rashed Boulevard, Downtown Dubai,
-                 31166 - Dubai, Next of the Armond building Road
-                 United Arab Emirates</p>
-=======
                 </h4>
                 <p>Sheikh Mohammed Bin Rashed Boulevard, Downtown Dubai, 31166 - Dubai, Next of the Armond building Road United Arab Emirates</p>
->>>>>>> a27b93b (update)
             </div>
 
 
         </div>
     </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> a27b93b (update)

@@ -1,22 +1,4 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-
-
-@Injectable({
-  providedIn: 'root'
-})
-export class contactUsService {
-
-  constructor() { }
-
-  }
-
-
-
-
-
-
-=======
 import { END_POINTS } from '../../shared/services/api/globals/global-config';
 import {HttpClient} from '@angular/common/http'
 import {  Observable } from 'rxjs';
@@ -40,4 +22,4 @@ export class ContactusService {
   }
 
 }
->>>>>>> a27b93b (update)
+

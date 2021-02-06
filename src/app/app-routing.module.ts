@@ -15,10 +15,8 @@ const routes: Routes = [
   {path:'signup' ,  loadChildren: async () => (await import('./pages/signup/signup.module')).SignupModule },
   {path:'companyinfo' ,  loadChildren: async () => (await import('./pages/companyinfo/companyinfo.module')).CompanyinfoModule},
   {path:'Contract' ,  loadChildren: async () => (await import('./pages/contract/contract.module')).ContractModule},
-<<<<<<< HEAD
-=======
+
   {path:'confirmphone' ,  loadChildren: async () => (await import('./pages/confirmphone/confirmphone.module')).ConfirmphoneModule},
->>>>>>> a27b93b (update)
   {path:'cart' ,  loadChildren: async () => (await import('./pages/cart/cart.module')).CartModule},
   {path:'terms' ,  loadChildren: async () => (await import('./pages/terms/terms.module')).TermsModule},
   {path:'**' ,pathMatch: 'full', redirectTo: 'home'}

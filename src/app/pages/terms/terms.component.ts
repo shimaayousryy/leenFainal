@@ -12,19 +12,17 @@ export class TermsComponent implements OnInit {
   constructor(private _router: Router) { }
 
 
-  goToConfirmNum(){
-    this.flag = false;
-  }
-<<<<<<< HEAD
-  goToCcompanyinfo(){
-    this._router.navigate(['companyinfo'])
-  }
-=======
 
->>>>>>> a27b93b (update)
+
 
 
   ngOnInit(): void {
+  }
+  goToConfirmNum(){
+    this.flag = false;
+  }
+  goToCcompanyinfo(){
+    this._router.navigate(['companyinfo'])
   }
 
 }

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl , FormGroup , Validators} from '@angular/forms'
-<<<<<<< HEAD
-=======
+
 import { Users } from './signup.model';
 import {signUpService} from './signup.service'
 import { Router } from '@angular/router';
 import { Cities } from './city.model';
 import swal from 'sweetalert2';
->>>>>>> a27b93b (update)
 
 
 @Component({
@@ -16,29 +14,8 @@ import swal from 'sweetalert2';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-<<<<<<< HEAD
-  signUpForm:FormGroup;
-  constructor() { }
-
- 
-ngOnInit(): void {
-  this.signUpForm = new FormGroup({
-    'first_name' : new FormControl(null , [Validators.maxLength(10) , Validators.required]  ),
-    'last_name' : new FormControl(null , [Validators.maxLength(10) , Validators.required]  ),
-    'phone' : new FormControl(null , [Validators.minLength(10) , Validators.required] ) ,
-    'email' : new FormControl(null , [Validators.email , Validators.required]  ),
-    'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)]),
-    'confirmPassword' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)])
-  })
- }
 
 
-
-
-
-
-
-=======
 
   // Users signUp array
   user:Users[]=[];  
@@ -112,6 +89,5 @@ fill(city:Cities){
   this.userObj.id = city.id;
   this.cityName = city.en_city_name;
 }
->>>>>>> a27b93b (update)
 
 }

@@ -11,10 +11,8 @@ export class TrackorderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-=======
+
     // track Order Form validation
->>>>>>> a27b93b (update)
     this.trackOrderForm= new FormGroup({
       'email' : new FormControl(null , [Validators.email , Validators.required]  ),
       'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)])

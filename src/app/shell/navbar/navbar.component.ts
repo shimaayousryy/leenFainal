@@ -13,11 +13,9 @@ export class NavbarComponent implements OnInit {
   }
 
 
-<<<<<<< HEAD
     
-=======
+
     // language spinner 
->>>>>>> a27b93b (update)
   showSpinnerSitting(){
     this.show=!this.show;
   }
