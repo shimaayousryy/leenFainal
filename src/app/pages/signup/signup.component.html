@@ -27,7 +27,7 @@
                     
                               <input type="text" placeholder="Enter first name" class="form-control  border-0" id="exampleInputPassword1"
                               [class.is-valid]="signUpForm.get('first_name').errors == null && signUpForm.get('first_name').touched "
-                              formControlName='first_name'>
+                              formControlName='first_name' [(ngModel)]="userObj.first_name">
                           </div>
                           <div class="alert alert-danger" role="alert"
                                 *ngIf="signUpForm.get('first_name').errors != null && signUpForm.get('first_name').touched">
@@ -44,7 +44,7 @@
                   
                             <input type="text" placeholder="Enter last name" class="form-control  border-0" id="exampleInputPassword1"
                             [class.is-valid]="signUpForm.get('last_name').errors == null && signUpForm.get('last_name').touched "
-                            formControlName='last_name'>
+                            formControlName='last_name' [(ngModel)]="userObj.last_name">
                         </div>
                         <div class="alert alert-danger" role="alert"
                                 *ngIf="signUpForm.get('last_name').errors != null && signUpForm.get('last_name').touched">
@@ -56,15 +56,18 @@
                     <div class="form-group">
                         <div class="border-bottom rounded mb-4  d-flex" >
                             <span><i class="fas fa-map-marker-alt text-white  mx-5 mt-1 "></i></span> 
-                            
-                        <select class="form-control border-0 text-gray" required>
-                            <option>Select city:</option>
-                            <option >Jeddah</option>
-                            <option >El-Riad</option>
-                            <option  >El-madina</option>
-                            <option >makkah</option>
-                            <option >Nagran</option>
-                          </select>
+                          <div class="dropdown w-100">
+                            <a (click)="getCiteis()" class="bg-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white">
+                             select city :
+                            </a>
+                            <div class="dropdown-menu bg-mainColor" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item text-white border-bottom" (click)="fill(city)"  *ngFor="let city of cityList">
+                                  <span>{{city.en_city_name}}</span>
+                              </a>
+                            </div>
+                          </div>
+
+
                           </div>
                       </div>
                 
@@ -89,7 +92,7 @@
                                                       
                               <input type="email" placeholder="Enter your mail" class="form-control border-0" id="exampleInputPassword1"
                               [class.is-valid]="signUpForm.get('email').errors == null && signUpForm.get('email').touched "
-                              formControlName='email' >
+                              formControlName='email'  [(ngModel)]="userObj.email">
                           </div>
                           <div class="alert alert-danger" role="alert"
                                 *ngIf="signUpForm.get('email').errors != null && signUpForm.get('email').touched">
@@ -105,7 +108,7 @@
                                <span> <i class="far fa-eye-slash text-white  mx-5 mt-1 "></i>
                               </span> 
                               <input type="password" placeholder="Enter Password" class="form-control border-0" id="exampleInputPassword1" [class.is-valid]="signUpForm.get('password').errors == null && signUpForm.get('password').touched "
-                              formControlName='password'>
+                              formControlName='password' [(ngModel)]="userObj.password">
                           </div>
                           <div class="alert alert-danger" role="alert"
                           *ngIf="signUpForm.get('password').errors != null && signUpForm.get('password').touched">
@@ -113,20 +116,12 @@
                           </div>
                       </div>
   
-                    
-                  
-  
                       <div class="form-check mt-2 ml-4">
                           <input type="checkbox" class="form-check-input mt-1" id="exampleCheck1">
                           <label class="form-check-label ml-3 text-white" for="exampleCheck1">Privacy Policy & Terms of Service</label>
                      </div>
-  
-  
-                   
                      <div class="ml-5">
-                         
-                      <button type="submit" class="btn text-white bg-mainColor mt-4 mb-4">sign up</button>
-                      
+                      <button type="submit" (click)="createAllUser()"  [disabled]='signUpForm.invalid' class="btn text-white bg-mainColor mt-4 mb-4">sign up</button>
                       <p class="text-center text-white">Already have an account?  <span class="border-bottom text-white  font-weight-bold">Log in</span></p>
                      </div>
                   </form>

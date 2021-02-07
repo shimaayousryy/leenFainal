@@ -155,9 +155,11 @@ export class HomeComponent implements OnInit {
     this.disableLoadLessProductBycategoryId = false;
     if ((Number(localStorage.getItem('totalpage')) - Number(localStorage.getItem('page'))) == 1) {
       this.disableLoadMore = false;
+      
     }
 
     this.pageNumber = 1 + Number(localStorage.getItem('page'))
+  
     localStorage.setItem('page', String(this.pageNumber))
 
     if (localStorage.getItem('page') != '1') {

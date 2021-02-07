@@ -1,8 +1,5 @@
 @import"../../../styles.scss";
 
-
-
-
 input ,select{
     background-color: transparent;
 }
@@ -12,22 +9,22 @@ input:focus , select:focus{
     box-shadow: none !important;
 }
 
-
-
 .text-gray{
     color: gray;
 }
-
-
-
 
 .dropdown-item:hover{
     color: white;
     background-color: $mainColor;
 }
 .dropdown button{
-    box-shadow: none;
+    border: none;
 }
+.dropdown-menu .dropdown-item:hover span{
+    font-size: 17px;
+    transition: all 1s;
+}
+
 .account{
     cursor: pointer;
 }

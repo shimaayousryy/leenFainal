@@ -1,5 +1,5 @@
 <section>
-    <div class="container">
+    <div class="container py-5">
       <!--------------------- search --------------------------->
       <div class="row mt-5">
         <div class="col-lg-9  mx-auto">
@@ -31,9 +31,8 @@
 
         </div>
     </div>
-
-    <div class="col-lg-8  mt-5 ">
-       
+<!-- display products -->
+    <div class="col-lg-8  mt-5 ">     
        <div class="row ">
         <div class="col-lg-4 col-md-6" *ngFor="let item of productList |search:term">
             <div class="product text-center mt-3 border rounded shadow  animate__animated animate__backInUp py-3">
@@ -64,8 +63,27 @@
 
     </div>
 
+         <!--------pagination---------->
+         <div class="col-lg-2 col-md-4 mx-auto">
+            <div class="pagination mt-5 d-flex justify-content-between">
+                <a>
+                    <span class="fas fa-angle-left fa-3x text-mainColor" (click)="loadLess()"
+                        *ngIf="disableLoadLess" aria-hidden="true"></span>
 
-    <!--------------------------display products---------------------->
+                </a>
+
+                <ul class="list-unstyled d-flex ">
+                    <li class=" bg-mainColor text-white px-3 py-2 rounded-circle">{{page}}</li>
+                </ul>
+                <a>
+                    <span class="fas fa-angle-right fa-3x text-mainColor" (click)="loadMore()"
+                        *ngIf="disableLoadMore" aria-hidden="true"></span>
+
+                </a>
+            </div>
+        </div>
+
+
 </div>
     </div>
 </section>

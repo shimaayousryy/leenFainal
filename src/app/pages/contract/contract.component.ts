@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
-
-
+import { Router } from '@angular/router'
+import { from } from 'rxjs';
+import { ContractService } from './contract.service'
+import { Contract } from './contract.model'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contract',
   templateUrl: './contract.component.html',
@@ -9,13 +11,14 @@ import {Router} from '@angular/router'
 })
 export class ContractComponent implements OnInit {
 
+  // Users signUp array
+  contract: Contract[] = [];
+  contractObj: Contract = new Contract();
 
 
-  data:string;
+  contractForm: FormGroup;
 
-
-  constructor(
-     ) { }
+  constructor(private ContractService: ContractService) { }
 
 
   // goToCart(){
@@ -23,11 +26,17 @@ export class ContractComponent implements OnInit {
   //   localStorage.setItem('permission' , 'done')
   // }
   ngOnInit(): void {
-
-
+    // init
+    this.contractObj = new Contract();
+    this.contractForm = new FormGroup({
+      'start_date': new FormControl(null, [ Validators.required]),
+      'end_date': new FormControl(null, [ Validators.required])
+    })
   }
   /******************post contract method******************/
+  contractData() {
+    this.ContractService.contractForm(this.contractObj).subscribe(res => {
 
-  /******************end post contract method******************/
-
+    })
+  }
 }
