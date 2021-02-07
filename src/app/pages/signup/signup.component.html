@@ -25,7 +25,7 @@
                           <div class="border-bottom rounded   d-flex" >
                               <span><i class="far fa-user text-white  mx-5 mt-1 "></i></span> 
                     
-                              <input type="text" placeholder="Enter first name" class="form-control  border-0" id="exampleInputPassword1"
+                              <input type="text" placeholder="Enter first name" class="form-control  border-0" 
                               [class.is-valid]="signUpForm.get('first_name').errors == null && signUpForm.get('first_name').touched "
                               formControlName='first_name' [(ngModel)]="userObj.first_name">
                           </div>
@@ -57,8 +57,8 @@
                         <div class="border-bottom rounded mb-4  d-flex" >
                             <span><i class="fas fa-map-marker-alt text-white  mx-5 mt-1 "></i></span> 
                           <div class="dropdown w-100">
-                            <a (click)="getCiteis()" class="bg-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white">
-                             select city :
+                            <a  class="bg-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white">
+                             select city : {{cityName}}
                             </a>
                             <div class="dropdown-menu bg-mainColor" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item text-white border-bottom" (click)="fill(city)"  *ngFor="let city of cityList">

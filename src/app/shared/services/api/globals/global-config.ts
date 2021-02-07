@@ -42,6 +42,10 @@ export class END_POINTS {
 
   // confirm phone number api
   public static confirm_number = LeenAPI_URL + "/otp-resend"
+
+    //confirm company information api
+    public static add_busniess = LeenAPI_URL + "/add_busniess"
+    public static id_type = LeenAPI_URL + "/id_type"
 }
 
 

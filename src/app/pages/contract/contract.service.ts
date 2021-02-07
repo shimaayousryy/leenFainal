@@ -36,4 +36,6 @@ export class ContractService {
    getContractTime() : Observable<Timing[]>{
     return this.http.get<Timing[]>(API_contract_timing )
   }
+
+  
 }

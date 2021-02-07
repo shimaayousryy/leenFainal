@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ContractRoutingModule } from './contract-routing.module';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContractComponent } from './contract.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,9 +14,10 @@ import { ContractComponent } from './contract.component';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-
     ContractRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule ,
     NzDatePickerModule ,
 
   ]

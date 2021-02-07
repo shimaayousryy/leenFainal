@@ -14,7 +14,7 @@
                 </div>
                 <form [formGroup]='confirmCodeForm'>
                     <input type="number" class="form-control"  [class.is-valid]="confirmCodeForm.get('code').errors == null && confirmCodeForm.get('code').touched " formControlName='code' [(ngModel)]="codeObj.code">
-                    <button class="submit" class="btn mt-3 btn-lg text-white bg-mainColor"  (click)="confirmCode();">Confirm</button>
+                    <button class="submit" class="btn mt-3 btn-lg text-white bg-mainColor"  [disabled]='confirmCodeForm.invalid'  (click)="confirmCode();">Confirm</button>
                  </form>
             </div>
    

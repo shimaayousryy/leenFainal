@@ -4,6 +4,8 @@ import { from } from 'rxjs';
 import {PhoneService} from './phone.service'
 import {PhoneCode} from './phone.model'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
 @Component({
   selector: 'app-confirmphone',
   templateUrl: './confirmphone.component.html',
@@ -22,14 +24,15 @@ confirmCodeForm:FormGroup;
 
     // confirm Code Form validation
     this.confirmCodeForm = new FormGroup({
-      'code' : new FormControl(null , [Validators.maxLength(6),Validators.minLength(6) , Validators.required]  ),
+      'code' : new FormControl(null , [Validators.maxLength(9) , Validators.required]  ),
     })
   }
 
   confirmCode(){
     this.PhoneService.confirmPhone(this.codeObj).subscribe(res =>{
       console.log(res)
+      this._router.navigate(['/companyinfo'])
+
     })
-    // this._router.navigate(['companyinfo'])
   }
 }

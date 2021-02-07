@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   // citeis array
   cityList : Cities[] = [];
   cityObj : Cities = new Cities();
-  
+
   cityName: string;
 
   signUpForm:FormGroup;

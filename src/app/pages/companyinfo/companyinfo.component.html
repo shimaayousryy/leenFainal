@@ -15,10 +15,10 @@
                     </div>
 
                     <div class="px-5 mt-4">
-                        <form class="">
+                        <form [formGroup]='companyInfotForm'>
 
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="border-bottom  rounded px-4 py-2">
 
 
@@ -29,32 +29,57 @@
                                         <option>GCC</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
+
+
+                            
+                            <div class="form-group">
+                                <div class="border-bottom rounded mb-4" >
+                                  <div class="dropdown w-100">
+                                    <a  class="bg-transparent ml-5 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     select id type : {{idTypeName}}
+                                    </a>
+                                    <div class="dropdown-menu bg-mainColor" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item text-white border-bottom" (click)="fillIdType(type)"  *ngFor="let type of idType">
+                                          <span>{{type}}</span>
+                                      </a>
+                                    </div>
+                                  </div>
+        
+        
+                                  </div>
+                              </div>
 
 
                             <div class="form-group">
-                                <div class="border-bottom  rounded px-4 py-2">
-
-
-                                    <select class="form-control border-0 bg-transparent">
-                                        <option>Select from :</option>
-                                        <option>Jeddah</option>
-                                        <option>El-Riad</option>
-                                        <option>El-madina</option>
-                                        <option>makkah</option>
-                                        <option>Nagran</option>
-                                    </select>
-                                </div>
-                            </div>
+                                <div class="border-bottom rounded mb-4" >
+                                  <div class="dropdown w-100">
+                                    <a  class="bg-transparent ml-5 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     select city : {{cityName}}
+                                    </a>
+                                    <div class="dropdown-menu bg-mainColor" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item text-white border-bottom" (click)="fillCity(city)"  *ngFor="let city of cityList">
+                                          <span>{{city.en_city_name}}</span>
+                                      </a>
+                                    </div>
+                                  </div>
+        
+        
+                                  </div>
+                              </div>
 
 
                             <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom  rounded px-4 py-2">
 
-                                    <input type="number" placeholder="national id"
-                                        class="form-control border-0  bg-transparent" id="exampleInputPassword1">
+                                    <input type="number" placeholder="national id" class="form-control border-0  bg-transparent" [class.is-valid]= "companyInfotForm.get('national_id').errors == null && companyInfotForm.get('national_id').touched "
+                                        formControlName='national_id' [(ngModel)]="informatioObj.id_number">
                                 </div>
+                                <div class="alert alert-danger" role="alert"
+                                *ngIf="companyInfotForm.get('national_id').errors != null && companyInfotForm.get('national_id').touched">
+                                Enter Valid number data
+                            </div>
                             </div>
 
 
@@ -63,17 +88,26 @@
                                 <div class="border-bottom  rounded px-4 py-2">
 
                                     <input type="number" placeholder="Commercial Registration No"
-                                        class="form-control border-0 bg-transparent" id="exampleInputPassword1">
+                                        class="form-control border-0 bg-transparent" [class.is-valid]= "companyInfotForm.get('Commercial_Reg').errors == null && companyInfotForm.get('Commercial_Reg').touched "
+                                        formControlName='Commercial_Reg' [(ngModel)]="informatioObj.registration_number">
                                 </div>
+                                <div class="alert alert-danger" role="alert"
+                                *ngIf="companyInfotForm.get('Commercial_Reg').errors != null && companyInfotForm.get('Commercial_Reg').touched">
+                                Enter Valid number data
+                            </div>
                             </div>
 
                             <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom  rounded px-4 py-2">
 
-                                    <input type="text" placeholder="Address"
-                                        class="form-control border-0 bg-transparent" id="exampleInputPassword1">
+                                    <input type="text" placeholder="Address"  class="form-control border-0 bg-transparent" [class.is-valid]= "companyInfotForm.get('Address').errors == null && companyInfotForm.get('Address').touched "
+                                    formControlName='Address'  [(ngModel)]="informatioObj.business_location">
                                 </div>
+                                <div class="alert alert-danger" role="alert"
+                                *ngIf="companyInfotForm.get('Address').errors != null && companyInfotForm.get('Address').touched">
+                                this feild is required
+                            </div>
                             </div>
 
                             <div class="form-group">
@@ -90,18 +124,17 @@
                                             <div class="py-5 border rounded bg-transparent text-center"  (click)="uploadFile()">
                                                 <i class="fas fa-upload mx-2 mt-1"></i>
                                                 Attach image
-
-
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="text-center ">
-                                <button type="submit" class="btn text-white bg-mainColor my-3" (click)="submit()">submit</button>
 
+                            <div class="text-center ">
+                                <button type="submit" class="btn text-white bg-mainColor my-3" [disabled]='companyInfotForm.invalid' (click)="createCompanyInfo()">submit</button>
                             </div>
+
                         </form>
 
                     </div>

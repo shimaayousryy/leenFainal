@@ -28,3 +28,12 @@ input:focus , select:focus {
 input::placeholder{
     color: white;
 }
+
+.dropdown-item:hover{
+    color: white;
+    background-color: $mainColor;
+}
+.dropdown button{
+    border: none;
+}
+
