@@ -48,7 +48,7 @@ export class ContractComponent implements OnInit {
     })
 
   }
-  /******************post contract method******************/
+  //post contract method
   contractData() {
     this.ContractService.contractForm(this.contractObj).subscribe(res => {
       this._Router.navigate(['/home'])
@@ -56,6 +56,7 @@ export class ContractComponent implements OnInit {
     })
   }
 
+  // get time to display
   getTime() {
     this.ContractService.getContractTime().subscribe(res => {
       this.timeList = res
@@ -66,6 +67,8 @@ export class ContractComponent implements OnInit {
     this.contractObj.delivery_timing = timeVal.en_delivery_timing;
     this.timeStr = timeVal.en_delivery_timing;
   }
+
+ // get Duration to display
   getDuration() {
     this.ContractService.getContractDuration().subscribe(res => {
       this.duration = res

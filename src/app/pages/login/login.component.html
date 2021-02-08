@@ -18,7 +18,6 @@
                         <form [formGroup]='logInForm' (ngSubmit)=' createNewUser(logInForm)'>
 
                             <div class="form-group">
-                                <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom rounded px-4 py-2 d-flex justify-content-center">
                                     <span><i class="far fa-envelope text-white   mx-3 mt-1 "></i></span>
                                     <input type="email" placeholder="enter email"
@@ -32,12 +31,9 @@
                                 enter valid email
                             </div>
                             </div>
-                            <!-- alert -->
                            
 
-
                             <div class="form-group">
-                                <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom px-4 py-2 d-flex">
                                     <span> <i class="far fa-eye-slash text-white  mx-3 mt-1 "></i>
                                     </span>
@@ -54,13 +50,12 @@
                                 </div>
                             </div>
 
-
                             <div class="text-center ">
                                 <button [disabled]='logInForm.invalid' type="submit"
-                                    class="btn text-white bg-mainColor my-3">login</button>
-                                <p class="text-black-50">forget password</p>
+                                    class="btn text-white bg-mainColor my-3 ">login</button>
+                                <p class=" pointer text-black-50">forget password</p>
                                 <p class="text-center ">Don't have an account? <span
-                                        class="border-bottom font-weight-bold">sign up</span></p>
+                                        class="pointer border-bottom font-weight-bold" (click)=" routeToSignup()">sign up</span></p>
                             </div>
                         </form>
 

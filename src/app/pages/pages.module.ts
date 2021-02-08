@@ -22,7 +22,7 @@ import { ConfirmphoneComponent } from './confirmphone/confirmphone.component';
 
 @NgModule({
   declarations: [
-    ConfirmphoneComponent,
+    
     
 ],
   imports: [

@@ -55,13 +55,14 @@ ngOnInit(): void {
 // add user registeration to api
 createAllUser(){
   this.signUpService.signUpForm(this.userObj).subscribe(res =>{
+ 
     if(res.message == "sucessful"){
       swal.fire({
         icon: 'success',
         text : 'your registration is success now',
   
         showCancelButton: true,
-        confirmButtonText: `logIn`,
+        confirmButtonText: `confirm phone`,
   
       }).then((result) => {
   
@@ -88,6 +89,11 @@ getCiteis(){
 fill(city:Cities){
   this.userObj.id = city.id;
   this.cityName = city.en_city_name;
+}
+
+
+routeToLogin(){
+  this._Router.navigate(['/login'])
 }
 
 }

@@ -13,24 +13,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ConfirmphoneComponent implements OnInit {
 
+  // intial phoneCode  array
 code:PhoneCode[]=[];
 codeObj:PhoneCode = new PhoneCode();
-confirmCodeForm:FormGroup;
 
+confirmCodeForm:FormGroup;
   constructor(private _router: Router , private PhoneService:PhoneService) { }
 
   ngOnInit(): void {
     this.codeObj = new PhoneCode();
-
     // confirm Code Form validation
     this.confirmCodeForm = new FormGroup({
-      'code' : new FormControl(null , [Validators.maxLength(9) , Validators.required]  ),
+      'code' : new FormControl(null , [Validators.minLength(6) , Validators.required]  ),
     })
   }
 
+  //send code confirmation
   confirmCode(){
     this.PhoneService.confirmPhone(this.codeObj).subscribe(res =>{
-      console.log(res)
       this._router.navigate(['/companyinfo'])
 
     })

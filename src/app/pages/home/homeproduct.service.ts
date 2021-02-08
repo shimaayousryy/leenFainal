@@ -56,11 +56,6 @@ export class HomeproductService {
   }
 
 
-
-
-
-  ////////////////////////////// category ///////////////////////////////
-
   // get all category
   getAllCategory(): Observable<category[]> {
     return this.http.get<category[]>(API_category)

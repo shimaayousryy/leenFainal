@@ -55,12 +55,15 @@
                     
                     <div class="form-group">
                         <div class="border-bottom rounded mb-4  d-flex" >
-                            <span><i class="fas fa-map-marker-alt text-white  mx-5 mt-1 "></i></span> 
-                          <div class="dropdown w-100">
-                            <a  class="bg-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white">
-                             select city : {{cityName}}
+                            <span><i class="fas fa-map-marker-alt text-white  mx-5 mb-2"></i></span> 
+                          <div class="dropdown  w-100">
+                            <a  class="bg-transparent w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white">
+                               <span  class="ml-3 pb-2">
+                            Select City : {{cityName}}
+                          
+                             </span>
                             </a>
-                            <div class="dropdown-menu bg-mainColor" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu bg-mainColor w-100" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item text-white border-bottom" (click)="fill(city)"  *ngFor="let city of cityList">
                                   <span>{{city.en_city_name}}</span>
                               </a>
@@ -77,7 +80,7 @@
                         <span><i class="fas fa-mobile-alt text-white mx-5 mt-1 "></i></span>        
                           <input type="" placeholder="(+966) saudi Arabia" class="form-control border-0" id="exampleInputPassword1"
                           [class.is-valid]="signUpForm.get('phone').errors == null && signUpForm.get('phone').touched "
-                          formControlName='phone'>
+                          formControlName='phone'  [(ngModel)]="userObj.mobile_no">
                       </div>
                       <div class="alert alert-danger" role="alert"
                                 *ngIf="signUpForm.get('phone').errors != null && signUpForm.get('phone').touched">
@@ -103,7 +106,6 @@
   
                
                       <div class="form-group">
-                          <!-- <label for="exampleInputEmail1">Email address</label> -->
                           <div class="border-bottom rounded d-flex" >
                                <span> <i class="far fa-eye-slash text-white  mx-5 mt-1 "></i>
                               </span> 
@@ -115,6 +117,7 @@
                           Enter Valid Password
                           </div>
                       </div>
+                      
   
                       <div class="form-check mt-2 ml-4">
                           <input type="checkbox" class="form-check-input mt-1" id="exampleCheck1">
@@ -122,7 +125,10 @@
                      </div>
                      <div class="ml-5">
                       <button type="submit" (click)="createAllUser()"  [disabled]='signUpForm.invalid' class="btn text-white bg-mainColor mt-4 mb-4">sign up</button>
-                      <p class="text-center text-white">Already have an account?  <span class="border-bottom text-white  font-weight-bold">Log in</span></p>
+                      <p class="text-center text-white">Already have an account? 
+                           <span class="border-bottom text-white login  font-weight-bold" (click)="routeToLogin()">
+                               Log in</span>
+                            </p>
                      </div>
                   </form>
                   

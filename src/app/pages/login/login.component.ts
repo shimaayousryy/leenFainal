@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import {FormControl , FormGroup , Validators} from '@angular/forms';
 // import { userInfo } from 'os';
 import {UserLogin} from './login.model';
@@ -37,16 +36,16 @@ export class LoginComponent implements OnInit {
 
    createNewUser(logInForm){
      console.log(logInForm.value)
-     if(logInForm.valid == true){
      this.loginService.PostUser(logInForm.value).subscribe( res =>{
-      //  console.log(res)
-      //  if(res ){
-      //   this.router.navigate(['/confirmphone'])
-      // }else{
-      // }
+      this.router.navigate(['/home'])
+     
      })
-   }
+   
 
+  }
+
+  routeToSignup(){
+    this.router.navigate(['/signup'])
   }
 
 }

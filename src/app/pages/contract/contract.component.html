@@ -8,87 +8,92 @@
                         <div class="text-center  login ">
                             <h2 class="text-white">create contract</h2>
                         </div>
-                        <!-------------------end contract title------------------------->
 
                         <!--------------------contract form --------------------------->
                         <div class="px-5 mt-4">
                             <form [formGroup]='contractForm'>
-                                <!----------------------- Starting date --------------------->
+                                <!-- Starting date -->
                                 <div class="form-group">
 
                                     <!-- <label for="exampleInputEmail1">Email address</label> -->
-                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+                                    <div class="border  rounded px-4 py-2 d-flex">
 
                                         <span class="   mx-3 mt-1 ">Starting </span>
-                                         <input type="date" class="form-control border-0"  [class.is-valid]="contractForm.get('start_date').errors == null && contractForm.get('start_date').touched "
-                                         formControlName='start_date' [(ngModel)]="contractObj.contract_start_date">
+                                        <input type="date" class="form-control border-0"
+                                            [class.is-valid]="contractForm.get('start_date').errors == null && contractForm.get('start_date').touched "
+                                            formControlName='start_date' [(ngModel)]="contractObj.contract_start_date">
                                     </div>
                                     <div class="alert alert-danger" role="alert"
-                                    *ngIf="contractForm.get('start_date').errors != null && contractForm.get('start_date').touched">
-                                     this feild is required
-                                </div>
+                                        *ngIf="contractForm.get('start_date').errors != null && contractForm.get('start_date').touched">
+                                        this feild is required
+                                    </div>
                                 </div>
 
-                                <!----------------------- ending date --------------------->
+                                <!-- ending date -->
                                 <div class="form-group">
-                                    <div class="border-bottom  rounded px-4 py-2 d-flex">
+                                    <div class="border  rounded px-4 py-2 d-flex">
 
                                         <span class="mx-3 mt-1 ">Ending </span>
-                                        <input type="date" class="form-control border-0" [class.is-valid]="contractForm.get('end_date').errors == null && contractForm.get('end_date').touched "
-                                        formControlName='end_date' [(ngModel)]="contractObj.contract_end_date">
+                                        <input type="date" class="form-control border-0"
+                                            [class.is-valid]="contractForm.get('end_date').errors == null && contractForm.get('end_date').touched "
+                                            formControlName='end_date' [(ngModel)]="contractObj.contract_end_date">
                                     </div>
                                     <div class="alert alert-danger" role="alert"
-                                    *ngIf="contractForm.get('end_date').errors != null && contractForm.get('end_date').touched">
-                                     this feild is required
-                                </div>
+                                        *ngIf="contractForm.get('end_date').errors != null && contractForm.get('end_date').touched">
+                                        this feild is required
+                                    </div>
                                 </div>
 
                                 <!----------------- delivary----------------------->
                                 <div class="form-group mt-4">
                                     <div class="py-2 row ">
 
-                              <!----------------- delivary period----------------------->
-                                       <div class="col-md-6">
-                                        <div class="dropdown show">
-                                            <a class="btn bg-transparent border-bottom text-white "
-                                                 role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false" >
-                                                delivary period : <span class="duration">{{dutationStr}}</span> 
-                                            </a>
+                                        <!-- delivary period-->
+                                        <div class="col-md-6">
+                                            <div class="dropdown show">
+                                                <a class="btn bg-transparent border-bottom text-white " role="button"
+                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    delivary period : <span class="duration">{{dutationStr}}</span>
+                                                </a>
 
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" (click)="fillDuration(period)" *ngFor="let period of duration">{{period.en_delivery_duration}}  </a>
-                                              
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" (click)="fillDuration(period)"
+                                                        *ngFor="let period of duration">{{period.en_delivery_duration}}
+                                                    </a>
+
+                                                </div>
                                             </div>
                                         </div>
-                                       </div>
-                                    <!----------------- delivary time----------------------->
-                                    <div class="col-md-6">
-                                        <div class="dropdown show ml-3">
-                                            <a class="btn bg-transparent text-white border-bottom "
-                                                 role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                delivary time : <span class="time">{{timeStr}}</span>
-                                            </a>
+                                        <!-- delivary time--->
+                                        <div class="col-md-6">
+                                            <div class="dropdown show ml-3">
+                                                <a class="btn bg-transparent text-white border-bottom " role="button"
+                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    delivary time : <span class="time">{{timeStr}}</span>
+                                                </a>
 
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" (click)="fillTime(time)"  *ngFor="let time of timeList">{{time.en_delivery_timing}} </a>
-                                             
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" (click)="fillTime(time)"
+                                                        *ngFor="let time of timeList">{{time.en_delivery_timing}} </a>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                       
+
                                     </div>
                                 </div>
 
+
                                 <div class="float-right">
-                                    <button  (click)="contractData()" [disabled]='contractForm.invalid' type="submit" class="btn text-white bg-mainColor my-3">create
+                                    <button (click)="contractData()" [disabled]='contractForm.invalid' type="submit"
+                                        class="btn text-white bg-mainColor my-3">create
                                         contract</button>
                                 </div>
                             </form>
 
                         </div>
-                        <!-------------------- end contract form --------------------------->
 
                     </div>
                 </div>

@@ -31,7 +31,7 @@ export class loginService {
       return this.http.post<UserLogin>(API_LOG_IN, model);
     }
 
-    saveUserData(  email , password, token){
+    saveUserData(email , password, token){
       let user = new UserDATA( email , password , token);
       localStorage.setItem('userData' , JSON.stringify(user));
       this.currentUser.next(user);

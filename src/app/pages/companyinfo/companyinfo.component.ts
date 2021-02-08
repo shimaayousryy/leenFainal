@@ -24,49 +24,28 @@ export class CompanyinfoComponent implements OnInit {
   cityList : Cities[] = [];
   cityObj : Cities = new Cities();
   cityName: string;
+  // idtype array
   idTypeName :string
-  idType:any;
+  // idType:any;
+
+  types:IDTYPE[]=[];
+  typesobj:IDTYPE =new IDTYPE();
+
 
   companyInfotForm: FormGroup;
+
   constructor(private _router: Router , private CompanyService:CompanyService , private signUpService:signUpService) { }
 
-  uploadFile(){
-    
-    (async () => {
-   
-      const { value: file } = await Swal.fire({
-        title: 'Select image',
-        input: 'file',
-        inputAttributes: {
-          'accept': 'image/*',
-          'aria-label': 'Upload your profile picture'
-        }
-      })
-      
-      if (file) {
-        const reader = new FileReader()
-        reader.onload = (e) => {
-          Swal.fire({
-            title: 'Your uploaded picture',
-            
-            imageAlt: 'The uploaded picture'
-          })
-        }
-        reader.readAsDataURL(file)
-      }
-      
-      })()
-   
-   
-  }
-
-
+ 
 
   ngOnInit(): void {
+    // create object from array
     this.informatioObj = new COMPANYINFO();
     this.cityObj = new Cities();
 
+    this.typesobj = new IDTYPE();
 
+// call function to display data
     this.getCiteis();
     this.getIdType();
 
@@ -80,9 +59,11 @@ export class CompanyinfoComponent implements OnInit {
 
   createCompanyInfo(){
     this.CompanyService.companyInfo(this.informatioObj).subscribe(res =>{
+      this._router.navigate(['/Contract'])
 
     })
   }
+   // get city to display
   getCiteis(){
     this.signUpService.getCities().subscribe(res => {
       this.cityList = res;
@@ -92,21 +73,54 @@ export class CompanyinfoComponent implements OnInit {
   }
   // get city to send to api
 fillCity(city:Cities){
-  this.informatioObj.id = city.id;
+  this.informatioObj.issuing_city_id = city.id;
   this.cityName = city.en_city_name;
 }
 
+// get id type
 getIdType(){
   this.CompanyService.getIdType().subscribe(res =>{
-    this.idType = res.data
+    this.types = res.data;
+    console.log(res.data)
 
   })
 }
 
-fillIdType(type:any){
-  // this.informatioObj.id = city.id;
-  this.idTypeName = type
+fillIdType(type:IDTYPE){
+    this.informatioObj.id_type =String( type);
+  this.idTypeName = String( type);
+  console.log(type)
 }
+
+ // upload img
+ uploadFile(){
+  (async () => {
+     const { value: file } = await Swal.fire({
+      title: 'Select image',
+      input: 'file',
+      inputAttributes: {
+        'accept': 'image/*',
+        'aria-label': 'Upload your profile picture'
+      }
+    })
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        Swal.fire({
+          title: 'Your uploaded picture',
+          
+          imageAlt: 'The uploaded picture'
+        })
+      }
+      reader.readAsDataURL(file)
+    }
+    
+    })()
+ 
+ 
+}
+
+
 }
 
 

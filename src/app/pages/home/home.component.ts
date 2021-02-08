@@ -18,21 +18,15 @@ import { Products } from './product.model';
 export class HomeComponent implements OnInit {
   // default value
   flag: boolean = false;
-  name: String = "shimaa";
 
   term:string;
   // homeporoductList Array
   productList: Products[] = [];
   productObj:Products = new Products();
 
-  // productById array
-  // productByPrice : Products[] = [];
-  // productByPriceObj :ProductsByPrice =new ProductsByPrice();
-
   // main array of category
   category: category[] = [];
   categoryObj: category = new category();
-
 
   // page number to loading more
   pageNumber: number;
@@ -42,23 +36,14 @@ export class HomeComponent implements OnInit {
   // url to display image
   url = "http://leennew.souq-athar.com/leen/public/";
 
-
   // condition to display button if data not equal all data of product
   disableLoadMore: boolean = false;
   disableLoadLess: boolean = false;
-
-
   // condition to display button if data not equal all data of product
   disableLoadMoreProductBycategoryId: boolean = false;
   disableLoadLessProductBycategoryId: boolean = false;
 
-
-
-
-  constructor(private _router: Router,
-    private homeproductServices: HomeproductService) {
-
-    
+  constructor(private _router: Router, private homeproductServices: HomeproductService) { 
   }
 
   ngOnInit(): void {
@@ -99,7 +84,6 @@ export class HomeComponent implements OnInit {
 
         if (localStorage.getItem('page') == '1') {
           this.disableLoadLess = false;
-          console.log((localStorage.getItem('page')))
         }
 
 
@@ -113,10 +97,6 @@ export class HomeComponent implements OnInit {
     )
 
   }
-
-    
-      // this.getProductByPrice()
-
 
 
   inject(arg0: string[]) {
@@ -142,12 +122,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-  getTerms() {
-    this._router.navigate(['terms'])
-
-  }
-
-
     // button load more product with IPaginator
     //check if number of storage pages less than number of total number to show next products from pagination.
   loadMore() {
@@ -155,19 +129,12 @@ export class HomeComponent implements OnInit {
     this.disableLoadLessProductBycategoryId = false;
     if ((Number(localStorage.getItem('totalpage')) - Number(localStorage.getItem('page'))) == 1) {
       this.disableLoadMore = false;
-      
     }
 
-    this.pageNumber = 1 + Number(localStorage.getItem('page'))
-  
+    this.pageNumber = Number(localStorage.getItem('page')) + 1 
     localStorage.setItem('page', String(this.pageNumber))
 
-    if (localStorage.getItem('page') != '1') {
-      this.disableLoadLess = true;
-
-    
-    this.pageNumber = 1 + Number(localStorage.getItem('page'))
-    localStorage.setItem('page', String(this.pageNumber))
+ 
     
     if (localStorage.getItem('page') != '1') {
       this.disableLoadLess = true;
@@ -184,7 +151,6 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-}
 
     // button load more product with IPaginator
     //check if number of storing pages more than number of total number to show previous products from pagination.
@@ -205,12 +171,7 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('page') != '1') {
       this.disableLoadLess = true;
       this.disableLoadMore = true;
-    } else if (localStorage.getItem('page') == '1') {
-      this.disableLoadLess = false;
-
       this.page = Number(localStorage.getItem('page'));
-     
-      this.disableLoadMore = true;
     } else if (localStorage.getItem('page') == '1') {
       this.disableLoadLess = false;
       this.page =1
@@ -267,7 +228,6 @@ export class HomeComponent implements OnInit {
 
         if (localStorage.getItem('page') == '1') {
           this.disableLoadLessProductBycategoryId = false;
-          console.log((localStorage.getItem('page')))
         }
         this.productList = res.data.map((item) => {
           item.image_path = this.url + item.image_path + item.item_image;
