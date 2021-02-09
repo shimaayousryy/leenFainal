@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   disableLoadMoreProductBycategoryId: boolean = false;
   disableLoadLessProductBycategoryId: boolean = false;
 
-  constructor(private _router: Router, private homeproductServices: HomeproductService) { 
+  constructor(private _router: Router, private homeproductServices: HomeproductService) {
   }
 
   ngOnInit(): void {
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
    this.productObj =new Products();
     // init main object of  category
     this.categoryObj = new category();
-     
+
     // this.productByPriceObj = new ProductsByPrice();
     // main method category get All
     this.getAllCategory();
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
       this.flag = false;
     }
 
-    // set all product + storing pages using localStorage and display products by pagination 
+    // set all product + storing pages using localStorage and display products by pagination
     // display products
     this.homeproductServices.getAll().subscribe(
       res => {
@@ -87,9 +87,9 @@ export class HomeComponent implements OnInit {
         }
 
 
-    
+
         this.productList = res.data.map((item) => {
-       
+
           item.image_path = this.url + item.image_path + item.item_image;
           return item;
         });
@@ -131,14 +131,14 @@ export class HomeComponent implements OnInit {
       this.disableLoadMore = false;
     }
 
-    this.pageNumber = Number(localStorage.getItem('page')) + 1 
+    this.pageNumber = Number(localStorage.getItem('page')) + 1
     localStorage.setItem('page', String(this.pageNumber))
 
- 
-    
+
+
     if (localStorage.getItem('page') != '1') {
       this.disableLoadLess = true;
-      //pagination 
+      //pagination
       this.page = Number(localStorage.getItem('page'));
     }
 
@@ -197,9 +197,7 @@ export class HomeComponent implements OnInit {
           item.image_path = this.url + item.image_path + item.category_image;
           return item;
         });
-        // this.category = res;
-        // console.log(this.category)
-      
+
       }
     )
   }
@@ -211,7 +209,7 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('page');
     localStorage.removeItem('totalpage  ')
 
-    // diasble button of all product to able button of product by category id 
+    // diasble button of all product to able button of product by category id
     this.disableLoadMore = false;
     this.disableLoadLess = false;
     this.categoryObj.id = prop.id;
@@ -250,7 +248,7 @@ export class HomeComponent implements OnInit {
     //check if number of storing pages less than number of total number to show previous products by id from pagination.
   loadLessProductBycategoryId() {
 
-    // diasble button of all product to able button of product by category id 
+    // diasble button of all product to able button of product by category id
     this.disableLoadMore = false;
     this.disableLoadLess = false;
 
@@ -287,11 +285,11 @@ export class HomeComponent implements OnInit {
   }
 
 
-  
+
   // button load more products by id with IPaginator
     //check if number of storing pages more than number of total number to show previous products by id from pagination.
   loadMoreProductBycategoryId() {
-    // diasble button of all product to able button of product by category id 
+    // diasble button of all product to able button of product by category id
     this.disableLoadMore = false;
     this.disableLoadLess = false;
 
@@ -322,5 +320,5 @@ export class HomeComponent implements OnInit {
 
 }
 
-  
+
 

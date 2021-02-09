@@ -19,103 +19,125 @@
 
                             <!-- select id Type  -->
                             <div class="form-group ">
-                                <div class="border-bottom rounded px-4 py-2" >
-                                  <div class="dropdown">
-                                    <a  class="bg-transparent w-100  text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     <span class="">Select id type : {{idTypeName}}
+                                <div class="border-bottom rounded px-4 py-2">
+                                    <div class="dropdown">
+                                        <a class="bg-transparent w-100  text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="">Select id type : {{idTypeName}}
                                         <i class="fas fa-angle-down float-right"></i>
                                      </span>
-                                    </a>
-                                    <div class="dropdown-menu bg-mainColor w-100" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item text-white border-bottom" (click)="fillIdType(type)" *ngFor="let type of types">
-                                          <span>{{type}}</span>
-                                      </a>
+                                        </a>
+                                        <div class="dropdown-menu bg-mainColor w-100" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item text-white border-bottom" (click)="fillIdType(type)" *ngFor="let type of types">
+                                                <span>{{type}}</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                  </div>
-        
-        
-                                  </div>
-                              </div>
 
-                              <!-- select city  -->
+
+                                </div>
+                            </div>
+
+                            <!-- select city  -->
                             <div class="form-group">
-                                <div class="border-bottom rounded  px-4 py-2" >
-                                  <div class="dropdown w-100">
-                                    <a  class="bg-transparent w-100 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     <span  class="">
+                                <div class="border-bottom rounded  px-4 py-2">
+                                    <div class="dropdown w-100">
+                                        <a class="bg-transparent w-100 text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="">
                                         Select City : {{cityName}}
                                         <i class="fas fa-angle-down float-right"></i>
                                      </span>
-                                    </a>
-                                    <div class="dropdown-menu bg-mainColor w-100" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item text-white border-bottom" (click)="fillCity(city)"  *ngFor="let city of cityList">
-                                          <span>{{city.en_city_name}}</span>
-                                      </a>
+                                        </a>
+                                        <div class="dropdown-menu bg-mainColor w-100" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item text-white border-bottom" (click)="fillCity(city)" *ngFor="let city of cityList">
+                                                <span>{{city.en_city_name}}</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                  </div>
-        
-        
-                                  </div>
-                              </div>
+
+
+                                </div>
+                            </div>
 
                             <!-- national id -->
                             <div class="form-group">
-                            
+
                                 <div class="border-bottom  rounded px-4 py-2">
 
-                                    <input type="number" placeholder="national id" class="form-control border-0 bg-transparent" [class.is-valid]= "companyInfotForm.get('national_id').errors == null && companyInfotForm.get('national_id').touched "
-                                        formControlName='national_id' [(ngModel)]="informatioObj.id_number">
+                                    <input type="number" placeholder="national id" class="form-control border-0 bg-transparent" [class.is-valid]="companyInfotForm.get('national_id').errors == null && companyInfotForm.get('national_id').touched " formControlName='national_id' [(ngModel)]="informatioObj.id_number">
                                 </div>
-                                <div class="alert alert-danger" role="alert"
-                                *ngIf="companyInfotForm.get('national_id').errors != null && companyInfotForm.get('national_id').touched">
-                                Enter Valid number data
-                            </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="companyInfotForm.get('national_id').errors != null && companyInfotForm.get('national_id').touched">
+                                    Enter Valid number data
+                                </div>
                             </div>
 
                             <!-- Registration Number -->
                             <div class="form-group">
                                 <div class="border-bottom  rounded px-4 py-2">
 
-                                    <input type="number" placeholder="Commercial Registration No"
-                                        class="form-control border-0 bg-transparent" [class.is-valid]= "companyInfotForm.get('Commercial_Reg').errors == null && companyInfotForm.get('Commercial_Reg').touched "
-                                        formControlName='Commercial_Reg' [(ngModel)]="informatioObj.registration_number">
+                                    <input type="number" placeholder="Commercial Registration No" class="form-control border-0 bg-transparent" [class.is-valid]="companyInfotForm.get('Commercial_Reg').errors == null && companyInfotForm.get('Commercial_Reg').touched " formControlName='Commercial_Reg'
+                                        [(ngModel)]="informatioObj.registration_number">
                                 </div>
-                                <div class="alert alert-danger" role="alert"
-                                *ngIf="companyInfotForm.get('Commercial_Reg').errors != null && companyInfotForm.get('Commercial_Reg').touched">
-                                Enter Valid number data
-                            </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="companyInfotForm.get('Commercial_Reg').errors != null && companyInfotForm.get('Commercial_Reg').touched">
+                                    Enter Valid number data
+                                </div>
                             </div>
                             <!-- Address -->
                             <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Email address</label> -->
                                 <div class="border-bottom  rounded px-4 py-2">
 
-                                    <input type="text" placeholder="Address"  class="form-control border-0 bg-transparent" [class.is-valid]= "companyInfotForm.get('Address').errors == null && companyInfotForm.get('Address').touched "
-                                    formControlName='Address'  [(ngModel)]="informatioObj.business_location">
+                                    <input type="text" placeholder="Address" class="form-control border-0 bg-transparent" [class.is-valid]="companyInfotForm.get('Address').errors == null && companyInfotForm.get('Address').touched " formControlName='Address' [(ngModel)]="informatioObj.business_location">
                                 </div>
-                                <div class="alert alert-danger" role="alert"
-                                *ngIf="companyInfotForm.get('Address').errors != null && companyInfotForm.get('Address').touched">
-                                this feild is required
-                            </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="companyInfotForm.get('Address').errors != null && companyInfotForm.get('Address').touched">
+                                    this feild is required
+                                </div>
                             </div>
 
                             <!-- Attach image and file-->
                             <div class="form-group">
                                 <div class="px-4 py-2">
-                                    <div class="row">
-                                        <div class="col-md-6 mt-2">
-                                            <div class="attachFile py-5 border rounded bg-transparent text-center">
-                                                <i class="fas fa-upload mx-2 mt-1"></i>
-                                                Attach file
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-2">
-                                            <div class="attachFile py-5 border rounded bg-transparent text-center"  (click)="uploadFile()">
-                                                <i class="fas fa-upload mx-2 mt-1"></i>
-                                                Attach image
+                                    <div class="row justify-content-center mt-4">
+                                        <div class="col-md-8">
+
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-6 mx-auto nimate__animated animate__backInDown animate__delay-1s">
+                                                    <!-- <label *ngIf="!ar" class="text-left" [ngStyle]="myStyles"> CV <span class="danger"> *</span></label>
+                                                <label *ngIf="ar" style="text-align: right; float: right;" [ngStyle]="myStyles"> -->
+                                                    <!-- السيرة الذاتية <span class="danger"> *</span> </label> -->
+
+                                                    <div class="form-group">
+
+                                                        <div class="file-upload">
+                                                            <input type="file" (change)="savePdf($event,'file')" type="file" />
+                                                            <i class="fa fa-arrow-up"></i>
+                                                        </div>
+
+                                                        <!-- <p *ngIf="registerForm.get('cvFormData').errors != null && registerForm.get('cvFormData').touched" class="py-2 ml-3 text-danger">This field is required</p> -->
+                                                        <p class="py-2 ml-3 text-success">{{fileName}}</p>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                                <!-- <div class="col-md-4 col-sm-6 mx-auto nimate__animated animate__backInDown animate__delay-1s">
+            
+                                                <label  class="text-left" > cerification </label>
+            
+                                                <p ><i class="fa fa-window-close" (click)="changebackground(SlideImg,'UserImageURL',true,'image')"></i>
+                                                </p>
+                                                <p ><i class="fa fa-window-close" style="float: right;" (click)="changebackground(SlideImg,'UserImageURL',true,'image')"></i>
+                                                </p>
+                                                <div class="upload-container services-image" #SlideImg>
+                                                    <input #image name="image" class=" " autocomplete="off" (change)="onFileChangedOne($event,'image')" type="file" accept="image/*">
+            
+                                                </div>
+                                            </div> -->
+
                                             </div>
                                         </div>
                                     </div>
+
 
                                 </div>
                             </div>
@@ -134,8 +156,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-

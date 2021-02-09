@@ -1,12 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {COMPANYINFO} from './companyinfo.model'
-import Swal from 'sweetalert2'; 
+import Swal from 'sweetalert2';
 import {CompanyService} from './company.service'
 import {Cities} from '../signup/city.model'
 import {signUpService} from '../signup/signup.service'
 import { IDTYPE } from './idtype.model';
+
+
+
+interface HTMLInputEvent extends Event {
+  target: HTMLInputElement & EventTarget;
+}
 
 
 @Component({
@@ -31,12 +37,14 @@ export class CompanyinfoComponent implements OnInit {
   types:IDTYPE[]=[];
   typesobj:IDTYPE =new IDTYPE();
 
+  fileName:string;
 
   companyInfotForm: FormGroup;
 
-  constructor(private _router: Router , private CompanyService:CompanyService , private signUpService:signUpService) { }
+  constructor(private _router: Router , private CompanyService:CompanyService , private signUpService:signUpService ,     private renderer2: Renderer2,
+    ) { }
 
- 
+
 
   ngOnInit(): void {
     // create object from array
@@ -67,7 +75,7 @@ export class CompanyinfoComponent implements OnInit {
   getCiteis(){
     this.signUpService.getCities().subscribe(res => {
       this.cityList = res;
-      
+
 
     })
   }
@@ -81,7 +89,6 @@ fillCity(city:Cities){
 getIdType(){
   this.CompanyService.getIdType().subscribe(res =>{
     this.types = res.data;
-    console.log(res.data)
 
   })
 }
@@ -89,7 +96,6 @@ getIdType(){
 fillIdType(type:IDTYPE){
     this.informatioObj.id_type =String( type);
   this.idTypeName = String( type);
-  console.log(type)
 }
 
  // upload img
@@ -108,18 +114,61 @@ fillIdType(type:IDTYPE){
       reader.onload = (e) => {
         Swal.fire({
           title: 'Your uploaded picture',
-          
+
           imageAlt: 'The uploaded picture'
         })
       }
       reader.readAsDataURL(file)
     }
-    
+
     })()
- 
- 
+
+
 }
 
+// onFileChangedOne(event: HTMLInputEvent, prop: string) {
+//   const file = event.target.files[0];
+//   let el = event.target.parentNode as HTMLElement;
+//   this.renderer2.removeClass(el, 'services-image')
+//   let reader = new FileReader();
+//   reader.readAsDataURL(file)
+//   reader.onload = () => {
+//     this.informatioObj = reader.result as string;
+//     this.informatioObj.certification1 = this.applicationObj.certification1.split(',')[1];
+
+//     this.renderer2.setStyle(el,
+//       'background-image', `url(${reader.result ? reader.result : this.applicationObj.certification1})`)
+//     this.renderer2.setStyle(el, 'background-size', 'cover')
+//     this.renderer2.setStyle(el, 'background-position', 'center')
+
+//   }
+// }
+
+// changebackground(el: ElementRef, prop: string, isclear?: boolean, clsProp?: string) {
+//   if (isclear) {
+//     if (prop == 'UserImageURL') {
+//       this.renderer2.setStyle(el, 'background-image', `url('../../../assets/img/upload.png')`)
+//       this.applicationObj[clsProp] = "Deleted"
+//       return
+//     }
+//   }
+//   if (this.applicationObj[prop] === null) return
+//   this.renderer2.setStyle(el.nativeElement,
+//     'background-image', `url('${this.applicationObj.certification1}')`);
+//   this.renderer2.setStyle(el.nativeElement, 'background-size', 'cover')
+//   this.renderer2.setStyle(el.nativeElement, 'background-position', 'center')
+//   this.renderer2.setStyle(el.nativeElement, 'border', '3px solid black')
+//   this.renderer2.removeClass(el.nativeElement, 'services-image')
+// }
+
+savePdf(event: HTMLInputEvent) {
+  const file = event.target.files[0];
+  this.fileName =file.name;
+  this.informatioObj.attachment_1= this.fileName
+  // this.informatioObj.attachment_1= '.'+file.name.split('.')[1]
+
+
+}
 
 }
 

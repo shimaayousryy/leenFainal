@@ -20,14 +20,13 @@ export class TrackorderComponent implements OnInit {
     })
    }
 
-   
+
    createNewUser(logInForm){
-    console.log(logInForm.value)
     this.loginService.PostUser(logInForm.value).subscribe( res =>{
      this.router.navigate(['/home'])
-    
+
     })
-  
+
 
  }
 

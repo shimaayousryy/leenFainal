@@ -9,4 +9,8 @@ export class COMPANYINFO {
     id: number;
     status: string;
     business_info_status: string;
+    attachment_1:string;
+    attachment_2: string;
+
+
 }

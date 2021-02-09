@@ -30,17 +30,16 @@ export class LoginComponent implements OnInit {
       'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)])
     })
    }
-  
-  
+
+
 
 
    createNewUser(logInForm){
-     console.log(logInForm.value)
      this.loginService.PostUser(logInForm.value).subscribe( res =>{
-      this.router.navigate(['/home'])
-     
+     this.router.navigate(['/companyinfo'])
+
      })
-   
+
 
   }
 

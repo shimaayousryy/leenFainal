@@ -5,6 +5,8 @@ import { END_POINTS } from '../../shared/services/api/globals/global-config';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {UserDATA} from './loginUser'
 import { UserLogin } from './login.model';
+import { tap } from 'rxjs/operators';
+
 
 const API_LOG_IN = END_POINTS.log_in;
 
@@ -14,29 +16,24 @@ const API_LOG_IN = END_POINTS.log_in;
 export class loginService {
 
 
-
-    // PostOnlineServices(model: OnlineSupport): Observable<OnlineSupport> {
-    //   return this.http.post<OnlineSupport>(API_URL_OnlineSupport, model);
-    // }
   currentUser = new BehaviorSubject(null);
 
-  constructor(public http:HttpClient) { 
+  constructor(public http:HttpClient) {
     if(localStorage.getItem('userData')!=null){
       this.currentUser.next(JSON.parse(localStorage.getItem('userData')))
     }
   }
 
 
-    PostUser(model: UserLogin): Observable<UserLogin> {
-      return this.http.post<UserLogin>(API_LOG_IN, model);
+    PostUser(user: UserLogin) {
+      return this.http.post(API_LOG_IN, user).pipe(
+        tap(
+          res => {
+           localStorage.setItem('token',Object.values(res)[1]);
     }
+        ))}
 
-    saveUserData(email , password, token){
-      let user = new UserDATA( email , password , token);
-      localStorage.setItem('userData' , JSON.stringify(user));
-      this.currentUser.next(user);
-    }
-  
+
 
   }
 

@@ -1,9 +1,6 @@
 {
   "name": "notus-angular",
   "version": "1.0.0",
-  "description": "Notus Angular - Free Tailwind CSS UI Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/notus-angular",
-
   "description": "leen elkhair",
   "repository": "",
   "license": "MIT",
@@ -30,13 +27,12 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@popperjs/core": "2.5.1",
     "@progress/kendo-angular-common": "^1.0.0",
-
     "@progress/kendo-angular-dropdowns": "^4.4.1",
     "@progress/kendo-angular-l10n": "^2.0.0",
+    "@progress/kendo-angular-popup": "^3.0.0",
     "@progress/kendo-angular-scrollview": "^3.0.4",
     "@progress/kendo-angular-treeview": "^4.3.2",
     "@progress/kendo-theme-default": "latest",
-
     "@progress/kendo-ui": "^2021.1.119",
     "@syncfusion/ej2-angular-navigations": "^18.3.51",
     "@tailwindcss/custom-forms": "0.2.1",
@@ -46,7 +42,6 @@
     "chart.js": "2.9.3",
     "jquery": "^3.5.1",
     "ng-zorro-antd": "^10.1.2",
-
     "ngx-pagination": "^5.0.0",
     "ngx-spinner": "^10.0.1",
     "ngx-treeview": "^10.0.2",
@@ -55,9 +50,7 @@
     "sweetalert2": "^10.12.7",
     "tailwindcss": "1.8.10",
     "tslib": "2.0.1",
-    "zone.js": "0.10.3",
-
-    "@progress/kendo-angular-popup": "^3.0.0"
+    "zone.js": "0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1001.2",
