@@ -46,6 +46,9 @@ export class END_POINTS {
     //confirm company information api
     public static add_busniess = LeenAPI_URL + "/add_busniess"
     public static id_type = LeenAPI_URL + "/id_type"
+
+    // terms and condition api
+    public static terms = LeenAPI_URL + "/pages"
 }
 
 

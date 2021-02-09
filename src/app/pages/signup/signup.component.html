@@ -121,7 +121,7 @@
   
                       <div class="form-check mt-2 ml-4">
                           <input type="checkbox" class="form-check-input mt-1" id="exampleCheck1">
-                          <label class="form-check-label ml-3 text-white" for="exampleCheck1">Privacy Policy & Terms of Service</label>
+                          <label class="login form-check-label ml-3 text-white" for="exampleCheck1" (click)="routeToTermsPage() ">Privacy Policy & Terms of Service</label>
                      </div>
                      <div class="ml-5">
                       <button type="submit" (click)="createAllUser()"  [disabled]='signUpForm.invalid' class="btn text-white bg-mainColor mt-4 mb-4">sign up</button>

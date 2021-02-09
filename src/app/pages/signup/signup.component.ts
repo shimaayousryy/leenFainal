@@ -95,5 +95,9 @@ fill(city:Cities){
 routeToLogin(){
   this._Router.navigate(['/login'])
 }
+routeToTermsPage(){
+  this._Router.navigate(['/terms'])
+}
+
 
 }

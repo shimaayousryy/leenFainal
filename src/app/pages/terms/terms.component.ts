@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {TERMS} from './terms.model'
+import {TermsService} from './terms.service'
 @Component({
   selector: 'app-terms',
   templateUrl: './terms.component.html',
@@ -8,21 +9,26 @@ import { Router } from '@angular/router';
 })
 export class TermsComponent implements OnInit {
 
-  flag:boolean=true;
-  constructor(private _router: Router) { }
-
-
-
-
-
+   // homeporoductList Array
+   termList: TERMS[] = [];
+   termObj:TERMS = new TERMS();
+ 
+  constructor(private _router: Router , public TermsService:TermsService) { }
 
   ngOnInit(): void {
-  }
-  goToConfirmNum(){
-    this.flag = false;
-  }
-  goToCcompanyinfo(){
-    this._router.navigate(['companyinfo'])
+    this.termObj =new TERMS();
+    this.getTermsData()
   }
 
+  getTermsData(){
+    this.TermsService.getAllTerms().subscribe(res =>{
+      this.termList = res
+      
+    })
+  }
+
+
+  goToSignupPage(){
+    this._router.navigate(['signup'])
+  }
 }
