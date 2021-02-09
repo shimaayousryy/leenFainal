@@ -23,29 +23,32 @@
                             <ul class="navbar-nav m-auto  ">
                                 <li class="nav-item ">
                                     <a class="nav-link mr-2 " [routerLinkActive]="['active']"
-                                        [routerLink]="['home']">Home </a>
+                                        [routerLink]="['home']" >Home </a>
 
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2  " [routerLinkActive]="['active']"
+                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']"
                                         [routerLink]="['trackorder']" tabindex="-1" aria-disabled="true">Track Order</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2 " [routerLinkActive]="['active']"
+                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']"
                                         [routerLink]="['contactus']" tabindex="-1" aria-disabled="true">contact us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2 " [routerLinkActive]="['active']" [routerLink]="['login']"
+                                    <a class="nav-link mr-2" *ngIf='!isLogin' [routerLinkActive]="['active']" [routerLink]="['login']"
                                         tabindex="-1" aria-disabled="true">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-2 " (click)='logOut()' [routerLinkActive]="['active']" [routerLink]="logout">LogOut</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2 " [routerLinkActive]="['active']" [routerLink]="['signup']"
-                                        tabindex="-1" aria-disabled="true">Signup</a>
+                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']" [routerLink]="['signup']"
+                                        tabindex="-1" aria-disabled="true" *ngIf='!isLogin'>Signup</a>
                                 </li>
 
                                 <li class="nav-item ">
-                                    <a class="nav-link mr-2 " [routerLinkActive]="['active']"
+                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']"
                                         [routerLink]="['Contract']">Contract </a>
                                 </li>
                             </ul>

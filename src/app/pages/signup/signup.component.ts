@@ -15,8 +15,6 @@ import swal from 'sweetalert2';
 })
 export class SignupComponent implements OnInit {
 
-
-
   // Users signUp array
   user:Users[]=[];  
   userObj : Users = new Users();
@@ -46,7 +44,7 @@ ngOnInit(): void {
     'phone' : new FormControl(null , [Validators.maxLength(9),Validators.minLength(9) , Validators.required,Validators.pattern(/[0-9]/)] ) ,
     'email' : new FormControl(null , [Validators.email , Validators.required]  ),
     'password' : new FormControl(null ,[ Validators.required , Validators.pattern(/[a-z0-9]/)]),
-
+    'city' : new FormControl(null ,[ Validators.required]),
   })
 
  }
@@ -55,7 +53,9 @@ ngOnInit(): void {
 // add user registeration to api
 createAllUser(){
   this.signUpService.signUpForm(this.userObj).subscribe(res =>{
- 
+    // if(this.userObj.city_id === null){
+    //   this.signUpForm.invalid;
+    // }
     if(res.message == "sucessful"){
       swal.fire({
         icon: 'success',
@@ -81,14 +81,15 @@ createAllUser(){
 getCiteis(){
   this.signUpService.getCities().subscribe(res => {
     this.cityList = res;
-
+    
   })
 }
 
 // get city to send to api
 fill(city:Cities){
-  this.userObj.id = city.id;
+  this.userObj.city_id = city.id;
   this.cityName = city.en_city_name;
+  
 }
 
 
@@ -98,6 +99,4 @@ routeToLogin(){
 routeToTermsPage(){
   this._Router.navigate(['/terms'])
 }
-
-
 }
