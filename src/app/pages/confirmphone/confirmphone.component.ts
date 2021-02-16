@@ -31,7 +31,7 @@ confirmCodeForm:FormGroup;
   //send code confirmation
   confirmCode(){
     this.PhoneService.confirmPhone(this.codeObj).subscribe(res =>{
-      this._router.navigate(['/companyinfo'])
+      this._router.navigate(['/confirminfo'])
 
     })
   }

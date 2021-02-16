@@ -7,6 +7,8 @@ export class SeemorePipe implements PipeTransform {
 
   transform(words:string , limit:number): string {
     return words.substring(0,limit) + ' ...';
+
+
   }
 
 }

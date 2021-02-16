@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {TermsService} from '../../pages/terms/terms.service';
+import {TERMS} from '../../pages/terms/terms.model'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+    // termstList Array
+    termList: TERMS[] = [];
+    termObj:TERMS = new TERMS();
+  constructor(private _router: Router , public TermsService:TermsService) { }
 
   ngOnInit(): void {
+    this.termObj =new TERMS();
+    this.getTermsData()
   }
 
+  getTermsData(){
+    this.TermsService.getAllTerms().subscribe(res =>{
+      this.termList = res;
+      
+    })
+  }
+  routeTOTerm(){
+    this._router.navigate(['/terms'])
+  }
 }

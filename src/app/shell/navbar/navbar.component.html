@@ -20,26 +20,26 @@
                         </button>
 
                         <div id="my-nav" class="collapse navbar-collapse">
-                            <ul class="navbar-nav m-auto  ">
+                            <ul class="navbar-nav m-auto ">
                                 <li class="nav-item ">
                                     <a class="nav-link mr-2 " [routerLinkActive]="['active']"
-                                        [routerLink]="['home']" >Home </a>
+                                        [routerLink]="['home']" *ngIf='!isLogin' >Home </a>
 
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']"
+                                    <a class="nav-link mr-2"  *ngIf='!isLogin'  [routerLinkActive]="['active']"
                                         [routerLink]="['trackorder']" tabindex="-1" aria-disabled="true">Track Order</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link mr-2"  [routerLinkActive]="['active']"
-                                        [routerLink]="['contactus']" tabindex="-1" aria-disabled="true">contact us</a>
+                                        [routerLink]="['contactus']"  tabindex="-1" aria-disabled="true">contact us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link mr-2" *ngIf='!isLogin' [routerLinkActive]="['active']" [routerLink]="['login']"
                                         tabindex="-1" aria-disabled="true">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mr-2 " (click)='logOut()' [routerLinkActive]="['active']" [routerLink]="logout">LogOut</a>
+                                    <a class="nav-link mr-2 " (click)='logOut()'   [routerLinkActive]="['active']" [routerLink]="logout">LogOut</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -48,7 +48,7 @@
                                 </li>
 
                                 <li class="nav-item ">
-                                    <a class="nav-link mr-2"  [routerLinkActive]="['active']"
+                                    <a class="nav-link mr-2"   [routerLinkActive]="['active']"
                                         [routerLink]="['Contract']">Contract </a>
                                 </li>
                             </ul>

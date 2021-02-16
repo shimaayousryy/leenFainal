@@ -1,37 +1,40 @@
 
 <!-- terms  -->
 
+<!-- <section class="Homearea  ">
+    <div class="container">
+        <div class="row">
+                <p  [innerHTML]="privacy"></p>
+                <p  [innerHTML]="dataEnglish"></p>
+
+        </div>
+    </div>
+</section> -->
+
+
 <div class="container py-5">
-   <div class="row">
-   
-       <div class="col-md-7">
-           <h2 class="text-mainColor pb-3">Terms and conditions</h2>
-            <div class="d-flex flex-column ">
-              
-                <div  *ngFor="let term of termList">
-                    <h3 class="h5">{{term.en_page_title}}</h3>
-                    <p class="text-black-50">{{term.en_page_content}}</p>
-                    <hr>
-                </div>
+   <div class="row justify-content-center">
 
-              
-
-                
-            </div>
-            
+       <div class="col-md-9">
+        <h2 class=" pb-1 text-center">{{Title}}
+            <div class="line"></div>
+           </h2>
+        <div class="" [innerHtml]='Description'></div>
        </div>
 
 
-       <div class="col-md-4 offset-1 px-4">
+       <!-- <div class="col-md-4  px-4">
         <div class="handIcon d-flex justify-content-center align-item-center">
          <i class="fas fa-handshake text-mainColor "></i>
-      
         </div>
-    </div>  
+    </div>   -->
 
     <div class="col-md-6 mx-auto text-center">
         <div class="ml-auto mt-3">
-            <button class="btn bg-mainColor text-white btn-lg" (click)="goToSignupPage()">Accept All Terms and conditions</button>
+            <button class="btn bg-mainColor text-white btn-lg" (click)="goToSignupPage()">Accept All Terms and conditions
+                <i class="fas fa-handshake text-white  ml-2"></i>
+
+            </button>
         </div>
        
     </div>
